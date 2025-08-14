@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Reviews from "./components/Reviews";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-900 dark:text-gray-100">
@@ -13,6 +14,7 @@ function App() {
         <WhyChoose />
          <Pricing />
          <Reviews />
+           <Footer />
     </div>
   );
 }
