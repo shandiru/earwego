@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 const FAQSection = () => {
   const faqs = [
-    "Can ear wax cause tinnitus?",
-    "Why do GP's no longer do ear wax removal?",
-    "Is micro-suction safer than traditional syringing?",
-    "Do you treat children?",
-    "I have a perforation - is micro-suction safe?",
-    "Do you only do home visits?",
+    {
+      question: "Can ear wax cause tinnitus?",
+      answer: "The nearer to the eardrum the more likely this is.",
+    },
+    {
+      question: "Why do GP's no longer do ear wax removal?",
+      answer: "This is because the government legislate it as a non-essential service.",
+    },
+    {
+      question: "Is micro-suction safer than traditional syringing?",
+      answer: "This is because the government legislate it as a non-essential service.",
+    },
+    {
+      question: "Do you treat children?",
+      answer:
+        "The answer to this depends on the child - if they are confident and able to sit still then yes. Obviously infants are not recommended.",
+    },
+    {
+      question: "I have a perforation - is micro-suction safe?",
+      answer:
+        "Micro-suction is the only safe procedure for perforated or previously perforated eardrums.",
+    },
+    {
+      question: "Do you only do home visits?",
+      answer: "Yes, we only provide home visit appointments for your convenience.",
+    },
   ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="py-16 bg-slate-50">
@@ -25,14 +51,17 @@ const FAQSection = () => {
 
         {/* FAQ List */}
         <div className="space-y-4">
-          {faqs.map((question, index) => (
+          {faqs.map((faq, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"
             >
-              <button className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
+              >
                 <h3 className="text-lg font-semibold text-slate-800 pr-4">
-                  {question}
+                  {faq.question}
                 </h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +73,19 @@ const FAQSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-5 w-5 text-blue-600 flex-shrink-0"
+                  className={`h-5 w-5 text-blue-600 flex-shrink-0 transition-transform ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
                 >
                   <path d="m6 9 6 6 6-6" />
                 </svg>
               </button>
+
+              {openIndex === index && (
+                <div className="px-6 pb-4 border-t border-slate-100">
+                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
