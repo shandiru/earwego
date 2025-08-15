@@ -10,16 +10,18 @@ import FAQSection from "./components/FAQSection";
 import ContactSection from "./components/ContactSection";
 function App() {
   return (
-  
+    <>
       <Navbar />
-       <Hero />
-        <WhyChoose />
-         <Pricing />
-         <Reviews />
-           <FAQSection />
-           <ContactSection />
-           <Footer />
-    
+      <Hero />
+      <WhyChoose />
+      <Pricing />
+      <Reviews />
+      <FAQSection />
+      <ContactSection />
+      <Footer />
+    </>
+
+
   );
 }
 
