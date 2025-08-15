@@ -8,14 +8,7 @@
     <title>earwego</title>
 
     <!-- Set initial theme before app mounts to avoid flash -->
-    <script>
-      (() => {
-        const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const useDark = stored ? stored === 'dark' : prefersDark;
-        document.documentElement.classList.toggle('dark', useDark);
-      })();
-    </script>
+  
   </head>
 
   <body>
