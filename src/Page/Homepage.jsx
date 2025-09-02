@@ -8,6 +8,8 @@ import Reviews from "../components/Homepage/Reviews";
 
 import FAQSection from "../components/Homepage/FAQSection";
 import ContactSection from "../components/Homepage/ContactSection";
+import TeamSection from "../components/Homepage/TeamSection";
+
 function Home() {
   return (
     <>
@@ -15,6 +17,7 @@ function Home() {
       <Hero />
       <WhyChoose />
       <Pricing />
+      <TeamSection />
       <Reviews />
       <FAQSection />
       <ContactSection />
