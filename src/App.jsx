@@ -1,25 +1,23 @@
-// App.jsx
 // src/App.jsx
-import WhyChoose from "./components/WhyChoose";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Pricing from "./components/Pricing";
-import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
-import FAQSection from "./components/FAQSection";
-import ContactSection from "./components/ContactSection";
+import HomePage from "./Page/Homepage"; // corrected path
+
+
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <WhyChoose />
-      <Pricing />
-      <Reviews />
-      <FAQSection />
-      <ContactSection />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+      </Routes>
+
       <Footer />
-    </>
+    </Router>
   );
 }
 
