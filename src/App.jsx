@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./Page/Homepage"; // corrected path
 import Earwaxremovalpage from "./Page/Earwaxremovalpage"; // corrected path
+import ServiceDetailpage from "./Page/ServiceDetailpage"; // corrected path
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
             <Route path="/Earwaxremovalpage" element={<Earwaxremovalpage />} />
+             <Route path="/ServiceDetailpage" element={<ServiceDetailpage />} />
+
+          
 
       
 
