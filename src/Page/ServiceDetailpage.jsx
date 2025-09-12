@@ -19,7 +19,7 @@ const SERVICES = [
 const SERVICE_CONTENT = {
   braces: {
     title: "Braces & Aligners",
-    image: "/images/service-hero-braces.jpg",
+    image: "/dental.png",
     intro: [
       "Modern orthodontics offers subtle, comfortable options to align your teeth and improve your bite.",
       "From clear aligners to modern brackets, we tailor a treatment that fits your lifestyle.",
@@ -37,7 +37,7 @@ const SERVICE_CONTENT = {
   },
   whitening: {
     title: "Teeth Whitening",
-    image: "/images/service-hero-whitening.jpg",
+    image: "/dental.png",
     intro: [
       "Professional whitening brightens your smile safely with clinically tested gels and lamps.",
       "We customize shade goals and protect your enamel throughout the process.",
@@ -52,7 +52,7 @@ const SERVICE_CONTENT = {
   },
   implant: {
     title: "Dental Implant",
-    image: "/images/service-hero-implant.jpg", // ← the large image like your screenshot
+    image: "/dental.png", // ← the large image like your screenshot
     intro: [
       "Dental implants replace missing teeth with a strong, natural-looking solution that protects bone and restores function.",
       "Our team plans your treatment precisely for comfort, longevity, and a seamless smile.",
@@ -70,7 +70,7 @@ const SERVICE_CONTENT = {
   },
   floss: {
     title: "Dental Floss",
-    image: "/images/service-hero-floss.jpg",
+    image: "/dental.png",
     intro: [
       "Guided flossing techniques and tools to help you keep gums healthier between professional cleanings.",
     ],
@@ -83,7 +83,7 @@ const SERVICE_CONTENT = {
   },
   wisdom: {
     title: "Wisdom Teeth",
-    image: "/images/service-hero-wisdom.jpg",
+    image: "/dental.png",
     intro: [
       "Assessment and treatment plans for impacted or symptomatic wisdom teeth with gentle techniques.",
     ],
@@ -96,7 +96,7 @@ const SERVICE_CONTENT = {
   },
   crown: {
     title: "Molar Crown",
-    image: "/images/service-hero-crown.jpg",
+    image: "/dental.png",
     intro: [
       "Crowns restore cracked or heavily filled teeth with durable, natural-looking materials.",
     ],

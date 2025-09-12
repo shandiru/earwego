@@ -13,7 +13,7 @@ export default function ServiceContent({
     <section>
       {/* Hero image */}
       <div className="overflow-hidden rounded-2xl shadow-sm mb-6">
-        <img src={image} alt={title} className="w-full h-auto object-cover" />
+        <img src={image} alt={title}  className="w-full max-h-64 sm:max-h-80 md:max-h-96 object-cover mx-auto"/>
       </div>
 
       {/* Title */}

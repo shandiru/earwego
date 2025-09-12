@@ -4,7 +4,6 @@ import { Phone, Menu, X } from "lucide-react";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // Close mobile menu on resize to md+
   useEffect(() => {
     const onResize = () => window.innerWidth >= 768 && setOpen(false);
     window.addEventListener("resize", onResize);
@@ -14,9 +13,9 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top bar */}
+        {/* Top Bar */}
         <div className="flex justify-between items-center h-20">
-          {/* Left: Logo + Brand */}
+          {/* Logo & Brand */}
           <div className="flex items-center space-x-3">
             <img
               src="/earwego-logo.png"
@@ -30,10 +29,10 @@ const Navbar = () => {
             </h1>
           </div>
 
-          {/* Center: Nav (desktop) */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8">
             <a
-              href="#home"
+              href="/"
               className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
             >
               Home
@@ -62,19 +61,32 @@ const Navbar = () => {
             >
               Contact
             </a>
+            {/* ✅ New Pages */}
+            <a
+              href="/Earwaxremovalpage"
+              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
+            >
+              Page 1
+            </a>
+            <a
+              href="/ServiceDetailpage"
+              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
+            >
+              Page 2
+            </a>
           </nav>
 
-          {/* Right: Call button (desktop) */}
+          {/* Call Button (Desktop) */}
           <a
             href="tel:+447989668752"
             className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium shadow-xs h-9 px-4 py-2
-                       bg-[#059669] hover:bg-[#047857] text-white transition-all"
+              bg-[#059669] hover:bg-[#047857] text-white transition-all"
           >
             <Phone className="w-4 h-4" />
             Call Now
           </a>
 
-          {/* Mobile hamburger */}
+          {/* Mobile Hamburger */}
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((o) => !o)}
@@ -84,12 +96,12 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile drawer */}
+        {/* Mobile Drawer */}
         {open && (
           <div className="md:hidden border-t border-gray-200 py-3">
             <nav className="flex flex-col space-y-1">
               <a
-                href="#home"
+                href="/"
                 onClick={() => setOpen(false)}
                 className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
               >
@@ -123,12 +135,29 @@ const Navbar = () => {
               >
                 Contact
               </a>
+
+              {/* ✅ New Pages */}
+              <a
+                href="/Earwaxremovalpage"
+                onClick={() => setOpen(false)}
+                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
+              >
+                Page 1
+              </a>
+              <a
+                href="/ServiceDetailpage"
+                onClick={() => setOpen(false)}
+                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
+              >
+                Page 2
+              </a>
             </nav>
+
             <a
               href="tel:+447989668752"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-medium h-10 px-4 py-2
-                         bg-[#059669] hover:bg-[#047857] text-white transition-all"
+                bg-[#059669] hover:bg-[#047857] text-white transition-all"
             >
               <Phone className="w-4 h-4" />
               Call Now
