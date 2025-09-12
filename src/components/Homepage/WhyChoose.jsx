@@ -70,29 +70,41 @@ export default function WhyChoose() {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {items.map((item, idx) => (
-            <div key={idx} className="rounded-2xl overflow-hidden shadow-md group">
+            <div
+              key={idx}
+              className="group relative flex flex-col items-center"
+            >
               {/* Image */}
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-[220px] object-cover"
-              />
+              <div className="w-full h-[280px] rounded-2xl overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-              {/* Bottom Card (like reference) */}
-              <div className="bg-[#00c2b3] text-white p-5 flex flex-col justify-between h-[180px] relative">
-                <div className="flex items-center gap-3 mb-2">
-                  {item.icon}
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
+              {/* Overlay Box */}
+              <div className="-mt-10 w-[90%] bg-[#00c2b3] text-white rounded-2xl shadow-md p-6 relative h-[200px] flex flex-col justify-between">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-white/90 leading-relaxed line-clamp-3">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-white/90 leading-relaxed line-clamp-3">
-                  {item.desc}
-                </p>
-                {/* Arrow Button */}
-                <button className="absolute top-1/2 right-4 -translate-y-1/2 bg-white text-[#00c2b3] rounded-full p-2 shadow-md hover:scale-105 transition">
-                  <FiArrowRight className="w-4 h-4" />
-                </button>
+
+                {/* Arrow */}
+                <div className="flex justify-end">
+                  <button className="w-10 h-10 rounded-full bg-white text-[#00c2b3] flex items-center justify-center shadow-md hover:scale-110 transition">
+                    <FiArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
