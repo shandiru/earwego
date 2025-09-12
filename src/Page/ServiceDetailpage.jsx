@@ -6,106 +6,123 @@ import ServiceContent from "../components/Service/ServiceDetailPage/ServiceConte
 
 // Sidebar items (left column)
 const SERVICES = [
-  { id: "braces", label: "Braces & Aligners" },
-  { id: "whitening", label: "Teeth Whitening" },
-  { id: "implant", label: "Dental Implant" },
-  { id: "floss", label: "Dental Floss" },
-  { id: "wisdom", label: "Wisdom Teeth" },
-  { id: "crown", label: "Molar Crown" },
+  { id: "muffled", label: "Muffled Hearing" },
+  { id: "tinnitus", label: "Tinnitus" },
+  { id: "Earache", label: "Earache" },
+  { id: "Dizziness", label: "Dizziness" },
+  { id: "Itchiness", label: "Itchiness" },
+  { id: "DeviceIssues", label: "Device Issues" },
 ];
 
 // Content for each service (right column)
 // Replace image paths with your real files in /public/images/...
 const SERVICE_CONTENT = {
-  braces: {
-    title: "Braces & Aligners",
+  muffled: {
+    title: "Muffled Hearing",
     image: "/dental.png",
     intro: [
-      "Modern orthodontics offers subtle, comfortable options to align your teeth and improve your bite.",
-      "From clear aligners to modern brackets, we tailor a treatment that fits your lifestyle.",
+      "Blocked ears or reduced hearing clarity can be caused by a build-up of ear wax, which prevents sound from travelling effectively to the eardrum.",
+      "Our micro suction treatment gently clears the wax to restore natural hearing and clarity..",
     ],
     benefitsTitle: "The benefits :",
     benefits: [
-      "Healthier bite alignment and jaw comfort",
-      "Easier brushing and flossing between teeth",
-      "Clear aligners available for a near-invisible look",
-      "Custom plan and close monitoring by our specialists",
-      "Improved smile aesthetics and confidence",
-      "Flexible appointment times",
-      "Finance options available",
-    ],
+  "Noticeable improvement in hearing straight away",
+  "Safe and comfortable removal without water",
+  "Helps prevent further build-up and blockages",
+  "Quick procedure with minimal downtime",
+  "Protects delicate structures of the ear",
+  "Performed by experienced audiology professionals",
+]
+
   },
-  whitening: {
-    title: "Teeth Whitening",
+tinnitus: {
+    title: "Tinnitus",
     image: "/dental.png",
     intro: [
-      "Professional whitening brightens your smile safely with clinically tested gels and lamps.",
-      "We customize shade goals and protect your enamel throughout the process.",
+      "Ringing or buzzing sounds in the ears can sometimes be triggered or worsened by ear wax pressing on the eardrum.",
+      "Gentle micro suction can relieve pressure and may help reduce tinnitus symptoms.",
     ],
     benefitsTitle: "The benefits :",
-    benefits: [
-      "Noticeable results in a single visit",
-      "Safe on enamel with dentist supervision",
-      "Even whitening across all visible teeth",
-      "Custom take-home kits available",
-    ],
+   benefits: [
+  "May reduce ringing or buzzing sounds",
+  "Relieves pressure in the ear canal",
+  "Safe, gentle and non-invasive method",
+  "Immediate results in many cases",
+  "No messy drops or syringing required",
+  "Carried out by trained specialists",
+],
   },
-  implant: {
-    title: "Dental Implant",
+  Earache: {
+    title: "Earache",
     image: "/dental.png", // ← the large image like your screenshot
     intro: [
-      "Dental implants replace missing teeth with a strong, natural-looking solution that protects bone and restores function.",
-      "Our team plans your treatment precisely for comfort, longevity, and a seamless smile.",
+      "Pain or discomfort in the ear may be linked to impacted ear wax creating pressure or trapping bacteria.",
+      "Micro suction quickly removes the blockage, helping to ease discomfort.",
     ],
     benefitsTitle: "The benefits :",
-    benefits: [
-      "Eat and speak with confidence again",
-      "Prevents bone loss in the jaw",
-      "Looks and feels like a natural tooth",
-      "Durable titanium post for long-term stability",
-      "Protects neighbouring teeth",
-      "High success rate with proper care",
-      "Easy day-to-day maintenance",
-    ],
+   benefits: [
+  "Rapid relief from pressure-related pain",
+  "Reduces risk of ear infections developing",
+  "Comfortable and precise wax removal",
+  "No risk of water entering the ear",
+  "Promotes better ear canal health",
+  "Professional and hygienic treatment environment",
+]
+,
   },
-  floss: {
-    title: "Dental Floss",
+  Dizziness: {
+    title: "Dizziness",
     image: "/dental.png",
     intro: [
-      "Guided flossing techniques and tools to help you keep gums healthier between professional cleanings.",
+      "Balance issues or feeling unsteady can occur if ear wax affects the inner ear or presses against the eardrum.",
+      "Our team can remove the blockage to help restore balance and comfort.",
     ],
     benefitsTitle: "The benefits :",
-    benefits: [
-      "Reduces plaque and bleeding",
-      "Protects against gum disease",
-      "Personalised tool recommendations",
-    ],
+benefits: [
+  "Can improve balance and reduce unsteadiness",
+  "Restores normal ear canal function",
+  "Safe, gentle technique with no water used",
+  "Fast, targeted treatment",
+  "Helps prevent recurrent wax build-up",
+  "Performed by skilled audiology practitioners",
+]
+,
   },
-  wisdom: {
-    title: "Wisdom Teeth",
+  Itchiness: {
+    title: "Itchiness",
     image: "/dental.png",
     intro: [
-      "Assessment and treatment plans for impacted or symptomatic wisdom teeth with gentle techniques.",
+      "An uncomfortable itching sensation can occur if wax builds up and irritates the ear canal skin.",
+      "Micro suction removes the irritant and leaves your ears feeling fresh and clear.",
     ],
     benefitsTitle: "The benefits :",
-    benefits: [
-      "Less crowding and bite issues",
-      "Prevent recurrent infections",
-      "Comfort-focused care and aftercare",
-    ],
+   benefits: [
+  "Immediate relief from irritation and itching",
+  "Clears out dry or flaky wax build-up",
+  "Helps maintain healthy ear canal skin",
+  "No need for pre-softening ear drops",
+  "Non-invasive and pain-free",
+  "Safe for sensitive ears",
+]
+,
   },
-  crown: {
-    title: "Molar Crown",
+  DeviceIssues: {
+    title: "Device Issues",
     image: "/dental.png",
     intro: [
-      "Crowns restore cracked or heavily filled teeth with durable, natural-looking materials.",
+      "Trouble using hearing aids or earphones can happen if wax blocks sound or causes feedback.",
+      "Clearing the wax helps your devices work properly and comfortably again.",
     ],
     benefitsTitle: "The benefits :",
     benefits: [
-      "Protects weakened tooth structure",
-      "Improves function and appearance",
-      "Custom shade-matching for a seamless smile",
-    ],
+  "Improves sound quality from hearing aids or earphones",
+  "Prevents feedback or whistling noises",
+  "Helps hearing tests produce accurate results",
+  "Reduces the risk of ear infections from trapped moisture",
+  "Simple and quick procedure",
+  "Professional care tailored to your needs",
+]
+,
   },
 };
 
