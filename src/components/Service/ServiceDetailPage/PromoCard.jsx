@@ -6,7 +6,7 @@ export default function PromoCard({ image, title, tag, cta, onClick }) {
     <div className="relative overflow-hidden rounded-2xl bg-slate-100">
       {/* background image */}
       <img
-        src={image}
+        src="/dental.png"
         alt={title}
         className="absolute inset-0 h-full w-full object-cover"
       />
