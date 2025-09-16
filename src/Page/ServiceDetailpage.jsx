@@ -148,7 +148,7 @@ export default function ServiceDetail() {
 
           <PromoCard
             tag="Online Appointment"
-            title="Enhance Your Smile with Professional Whitening"
+            title="Enhance Your Hearing with Professional Ear Cleaning"
             cta="Make Appointment"
             image="/images/promo-whitening.jpg"
           />
