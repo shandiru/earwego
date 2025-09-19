@@ -76,7 +76,7 @@ export default function Hero() {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                Home Visits Only
+                Home and Work
               </div>
 
               <div className="flex items-center text-[#1e293b]">
@@ -98,23 +98,7 @@ export default function Hero() {
                 Same Day Appointments
               </div>
 
-              <div className="flex items-center text-[#1e293b]">
-                {/* Phone */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5 mr-2 text-[#2563eb]"
-                  aria-hidden="true"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3 4.11 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.07.96.29 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.41 1.85.63 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                NHS Approved Equipment
-              </div>
+             
             </div>
           </div>
 

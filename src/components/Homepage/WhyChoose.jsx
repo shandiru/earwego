@@ -11,7 +11,7 @@ import {
 
 const items = [
   {
-    title: "Over 8 Years Experience",
+    title: "Over 10 Years Experience",
     desc:
       "Unrivalled micro suction experience. We often get cases where individuals have gone elsewhere but not received satisfactory results, but end up happy after visiting us.",
     img: "/dental.png",
@@ -24,13 +24,7 @@ const items = [
     img: "/dental.png",
     icon: <FiClock className="w-6 h-6 text-white" />,
   },
-  {
-    title: "NHS Approved Equipment",
-    desc:
-      "We use the same superior equipment as NHS hospitals - far more efficient than high street alternatives for quicker, more comfortable procedures.",
-    img: "/dental.png",
-    icon: <FiActivity className="w-6 h-6 text-white" />,
-  },
+  
   {
     title: "High Return Rate",
     desc:
@@ -45,13 +39,13 @@ const items = [
     img: "/dental.png",
     icon: <FiHome className="w-6 h-6 text-white" />,
   },
-  {
-    title: "Complete Care Package",
-    desc:
-      "Free hearing test after treatment if requested. We ensure your complete satisfaction and optimal hearing experience.",
-    img: "/dental.png",
-    icon: <FiCheckCircle className="w-6 h-6 text-white" />,
-  },
+  // {
+  //   title: "Complete Care Package",
+  //   desc:
+  //     "Free hearing test after treatment if requested. We ensure your complete satisfaction and optimal hearing experience.",
+  //   img: "/dental.png",
+  //   icon: <FiCheckCircle className="w-6 h-6 text-white" />,
+  // },
 ];
 
 export default function WhyChoose() {

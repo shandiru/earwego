@@ -5,7 +5,7 @@ const steps = [
   {
     title: "Examination",
     desc:
-      "Your ear canal is examined using a specialist microscope for precise visualization.",
+      "Your ear canal is examined using a specialist  endoscope for precise visualization.",
   },
   {
     title: "Gentle Suction",

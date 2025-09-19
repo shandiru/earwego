@@ -12,7 +12,7 @@ const FAQSection = () => {
     },
     {
       question: "Is micro-suction safer than traditional syringing?",
-      answer: "This is because the government legislate it as a non-essential service.",
+      answer: "It is safer less complications - less potential .... damage limitation.",
     },
     {
       question: "Do you treat children?",
@@ -25,7 +25,7 @@ const FAQSection = () => {
         "Micro-suction is the only safe procedure for perforated or previously perforated eardrums.",
     },
     {
-      question: "Do you only do home visits?",
+      question: "Do you only do home or work visits?",
       answer: "Yes, we only provide home visit appointments for your convenience.",
     },
   ];

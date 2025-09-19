@@ -145,7 +145,7 @@ const ContactSection = () => {
                 Book Your Appointment
               </div>
               <p className="text-gray-600">
-                Fill out the form below and we'll get back to you within 2 hours
+                We respond within 24 hours. Need it sooner? Call us
               </p>
             </div>
 

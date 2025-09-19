@@ -69,7 +69,7 @@ export default function MicroSuctionInfo({
               <div>
                 <h3 className="font-semibold text-slate-900 mb-1">Immediate Results</h3>
                 <p className="text-slate-600">
-                  Walk out hearing clearly again with instant relief.
+                  Within minutes able to hear clearly again - instant relief
                 </p>
               </div>
             </div>
