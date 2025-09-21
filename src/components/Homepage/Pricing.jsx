@@ -45,7 +45,7 @@ export default function Pricing() {
                   "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
-                  "Free hearing test (if requested)",
+                 
                 ].map((text) => (
                   <li key={text} className="flex items-center">
                     <svg
@@ -117,7 +117,7 @@ export default function Pricing() {
                   "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
-                  "Free hearing test (if requested)",
+                 
                   "Complete ear health check",
                 ].map((text) => (
                   <li key={text} className="flex items-center">

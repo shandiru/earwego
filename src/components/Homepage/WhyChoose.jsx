@@ -45,13 +45,13 @@ const items = [
     img: "/dental.png",
     icon: <FiHome className="w-6 h-6 text-white" />,
   },
-  // {
-  //   title: "Complete Care Package",
-  //   desc:
-  //     "Free hearing test after treatment if requested. We ensure your complete satisfaction and optimal hearing experience.",
-  //   img: "/dental.png",
-  //   icon: <FiCheckCircle className="w-6 h-6 text-white" />,
-  // },
+  {
+    title: "Complete Care Package",
+    desc:
+      " We ensure your complete satisfaction and optimal hearing experience.",
+    img: "/dental.png",
+    icon: <FiCheckCircle className="w-6 h-6 text-white" />,
+  },
 ];
 
 export default function WhyChoose() {
