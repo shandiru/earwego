@@ -18,9 +18,9 @@ const Navbar = () => {
           {/* Logo & Brand */}
           <div className="flex items-center space-x-3">
             <img
-              src="/earwego-logo.png"
+              src="/news-logo-removebg-preview.png"
               alt="Ear We Go Logo"
-              className="w-16 h-16"
+              className="w-30 h-30"
               loading="lazy"
               decoding="async"
             />
