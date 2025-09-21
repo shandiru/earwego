@@ -42,7 +42,7 @@ export default function Pricing() {
               <ul className="space-y-3 mb-6">
                 {[
                   "Professional micro suction",
-                  "NHS approved equipment",
+                  "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
                   "Free hearing test (if requested)",
@@ -114,7 +114,7 @@ export default function Pricing() {
               <ul className="space-y-3 mb-6">
                 {[
                   "Professional micro suction",
-                  "NHS approved equipment",
+                  "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
                   "Free hearing test (if requested)",

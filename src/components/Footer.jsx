@@ -16,7 +16,7 @@ export default function Footer() {
               areas with convenient home visits.
             </p>
             <p className="text-sm text-gray-400">
-              NHS approved equipment • Same day appointments • Thousands of
+            Medical Grade Equipment • Same day appointments • Thousands of
               satisfied customers
             </p>
           </div>
@@ -73,8 +73,10 @@ export default function Footer() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <address className="not-italic text-gray-300">
-                  <p>20 Osmaston Road</p>
-                  <p>Derby, Derbyshire, DE1 2HR</p>
+                  <p>Great Northern Rd,</p>
+                  <p>Derby, DE1 1LR</p>
+
+
                 </address>
               </div>
             </div>

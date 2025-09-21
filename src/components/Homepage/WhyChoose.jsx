@@ -16,11 +16,17 @@ const items = [
       "Unrivalled micro suction experience. We often get cases where individuals have gone elsewhere but not received satisfactory results, but end up happy after visiting us.",
     img: "/dental.png",
     icon: <FiAward className="w-6 h-6 text-white" />,
+  },{
+    title: "Medical Grade  Approved Equipment",
+    desc:
+      "We use the same superior equipment as  Medical Grade Equipment hospitals - far more efficient than high street alternatives for quicker, more comfortable procedures.",
+    img: "/dental.png",
+    icon: <FiActivity className="w-6 h-6 text-white" />,
   },
   {
     title: "Same Day Appointments",
     desc:
-      "No waiting weeks for NHS appointments. We offer same-day service when you need it most, often within hours of your call.",
+      "No waiting weeks for Medical Grade Equipment  appointments. We offer same-day service when you need it most, often within hours of your call.",
     img: "/dental.png",
     icon: <FiClock className="w-6 h-6 text-white" />,
   },
@@ -59,7 +65,7 @@ export default function WhyChoose() {
           </h2>
           <p className="text-lg text-[#64748b] max-w-3xl mx-auto">
             We've helped thousands of patients who couldn't get satisfactory results elsewhere.
-            Our expertise and NHS-approved equipment ensure you leave happy and hearing clearly.
+            Our expertise and Medical Grade Equipment ensure you leave happy and hearing clearly.
           </p>
         </div>
 

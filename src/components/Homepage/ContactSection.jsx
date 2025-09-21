@@ -104,8 +104,9 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#374151]">Address</h4>
-                    <p className="text-gray-600">20 Osmaston Road</p>
-                    <p className="text-gray-600">Derby, Derbyshire, DE1 2HR</p>
+                    <p className="text-gray-600">Great Northern Rd,</p>
+                    <p className="text-gray-600">Derby, DE1 1LR</p>
+                
                   </div>
                 </div>
               </div>
