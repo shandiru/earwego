@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Earwaxremovalpage" element={<Earwaxremovalpage />} />
-        <Route path="/ServiceDetailpage" element={<ServiceDetailpage />} />
+        <Route path="/symptoms" element={<ServiceDetailpage />} />
       </Routes>
 
       <Footer />

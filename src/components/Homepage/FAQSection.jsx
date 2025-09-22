@@ -49,7 +49,7 @@ const FAQSection = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-16 bg-slate-50" id="faq">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12" data-aos="fade-up">

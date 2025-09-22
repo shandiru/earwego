@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 
@@ -10,76 +11,44 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "Why Us", href: "#services" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Team", href: "#team" },
+    { label: "Reviews", href: "#reviews" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Recognising the Symptoms", href: "/symptoms" },
+    { label: "What is Micro Suction", href: "/Earwaxremovalpage" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Bar */}
         <div className="flex justify-between items-center h-20">
-          {/* Logo & Brand */}
-          <div className="flex items-center space-x-3">
-            <img
-              src="/news-logo-removebg-preview.png"
-              alt="Ear We Go Logo"
-              className="w-30 h-30"
-              loading="lazy"
-              decoding="async"
-            />
-            <h1 className="text-2xl font-serif font-bold text-[#2563eb]">
-              Ear We Go
-            </h1>
-          </div>
+          {/* ✅ Text-only Brand */}
+          <h1 className="text-2xl font-serif font-bold text-[#2563eb] whitespace-nowrap">
+            Ear We Go
+          </h1>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8">
-            <a
-              href="/"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#services"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Services
-            </a>
-            <a
-              href="#pricing"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Pricing
-            </a>
-            <a
-              href="#reviews"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Reviews
-            </a>
-            <a
-              href="#contact"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Contact
-            </a>
-            {/* ✅ New Pages */}
-            <a
-              href="/Earwaxremovalpage"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Page 1
-            </a>
-            <a
-              href="/ServiceDetailpage"
-              className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium"
-            >
-              Page 2
-            </a>
+          <nav className="hidden md:flex space-x-6">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium whitespace-nowrap"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
           {/* Call Button (Desktop) */}
           <a
             href="tel:+447989668752"
-            className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium shadow-xs h-9 px-4 py-2
+            className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium shadow-xs h-10 px-4
               bg-[#059669] hover:bg-[#047857] text-white transition-all"
           >
             <Phone className="w-4 h-4" />
@@ -100,63 +69,22 @@ const Navbar = () => {
         {open && (
           <div className="md:hidden border-t border-gray-200 py-3">
             <nav className="flex flex-col space-y-1">
-              <a
-                href="/"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Home
-              </a>
-              <a
-                href="#services"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Services
-              </a>
-              <a
-                href="#pricing"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Pricing
-              </a>
-              <a
-                href="#reviews"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Reviews
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Contact
-              </a>
-
-              {/* ✅ New Pages */}
-              <a
-                href="/Earwaxremovalpage"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Page 1
-              </a>
-              <a
-                href="/ServiceDetailpage"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
-              >
-                Page 2
-              </a>
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
 
             <a
               href="tel:+447989668752"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-medium h-10 px-4 py-2
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-medium h-10 px-4
                 bg-[#059669] hover:bg-[#047857] text-white transition-all"
             >
               <Phone className="w-4 h-4" />

@@ -29,7 +29,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className="bg-[#e9f6f4]">
+    <section className="bg-[#e9f6f4]" id="team">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Heading */}
         <header
