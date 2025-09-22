@@ -1,6 +1,6 @@
 // src/components/WhyChoose.jsx
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FiAward,
   FiClock,
@@ -9,65 +9,80 @@ import {
   FiHome,
   FiCheckCircle,
   FiArrowRight,
+  FiX,
 } from "react-icons/fi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const items = [
   {
-    title: "Over 10 Years Experience",
-    desc:
-      "Unrivalled micro suction experience. We often get cases where individuals have gone elsewhere but not received satisfactory results, but end up happy after visiting us.",
+    title: "Over 10 Years’ Experience",
+    short:
+      "Unrivalled micro suction experience. Many patients visit us after unsatisfactory results elsewhere.",
+    full: `With more than a decade of hands-on expertise, we’ve built a reputation for safe, professional, and effective earwax removal. Our founder, Rab, has spent years perfecting his techniques and supporting countless clients to restore their hearing clarity and comfort.
+
+We pride ourselves on combining traditional care with modern best practices, ensuring every treatment is carried out to the highest standard. When you choose us, you’re choosing proven experience, trusted service, and genuine care for your wellbeing.`,
     img: "/dental.png",
     icon: <FiAward className="w-6 h-6 text-white" />,
   },
   {
     title: "Medical Grade Approved Equipment",
-    desc:
-      "We use the same superior equipment as Medical Grade Equipment hospitals - far more efficient than high street alternatives for quicker, more comfortable procedures.",
+    short:
+      "We use superior medical-grade equipment for safe, hygienic, and precise treatments.",
+    full: `Your safety and comfort are our top priority. That’s why we only use medical grade, industry-approved equipment for every earwax removal procedure. This ensures treatments are not only highly effective but also safe, hygienic, and comfortable from start to finish.
+
+By investing in the latest approved tools, we’re able to deliver precise results while giving you peace of mind that you’re in trusted hands.`,
     img: "/dental.png",
     icon: <FiActivity className="w-6 h-6 text-white" />,
   },
   {
     title: "Same Day Appointments",
-    desc:
-      "No waiting weeks for Medical Grade Equipment appointments. We offer same-day service when you need it most, often within hours of your call.",
+    short: "No waiting weeks — we offer same-day relief when you need it most.",
+    full: `No need to wait weeks to be seen — we offer same day appointments, so you can get relief quickly and safely. Using our medical grade approved equipment, we provide fast, effective treatments without long delays, helping you get back to clear and comfortable hearing as soon as possible.`,
     img: "/dental.png",
     icon: <FiClock className="w-6 h-6 text-white" />,
   },
   {
     title: "High Return Rate",
-    desc:
-      "Very high percentage of returning happy customers who we've treated over the last few years and trust us with their ongoing ear care needs.",
+    short: "We’re proud to have a very high percentage of returning happy customers.",
+    full: `Our customers don’t just visit once — they trust us time and time again. Thanks to our professional care, comfortable treatments, and lasting results, we’re proud to have a very high percentage of returning happy customers.
+
+For us, it’s more than a service — it’s about building long-term relationships and becoming the go-to choice for safe and effective earwax removal.`,
     img: "/dental.png",
     icon: <FiUsers className="w-6 h-6 text-white" />,
   },
   {
-    title: "Convenient Home Visits",
-    desc:
-      "Professional, friendly service in your own home. No need to travel, park, or wait in clinics - we come to you.",
+    title: "Convenient Home or At Work",
+    short:
+      "Professional, friendly service at your home or workplace — stress-free care.",
+    full: `We make earwax removal simple and stress-free by bringing our professional, friendly service directly to you. Whether it’s in the comfort of your own home or at your workplace, we ensure safe, effective treatment that fits around your schedule.`,
     img: "/dental.png",
     icon: <FiHome className="w-6 h-6 text-white" />,
   },
   {
     title: "Complete Care Package",
-    desc: "We ensure your complete satisfaction and optimal hearing experience.",
+    short: "From consultation to aftercare — we’ve got you fully covered.",
+    full: `We believe in providing more than just a one-off treatment — our Complete Care Package is designed to give you everything you need for lasting peace of mind. From your initial consultation to safe, effective earwax removal and clear aftercare guidance, we cover every step of the process.
+
+With expert service, medical grade equipment, and flexible appointment options, you can be confident you’re receiving the very best care, all in one package.`,
     img: "/dental.png",
     icon: <FiCheckCircle className="w-6 h-6 text-white" />,
   },
 ];
 
 export default function WhyChoose() {
+  const [selected, setSelected] = useState(null);
+
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration (ms)
-      once: false, // animate every scroll
-      mirror: true, // animate on scroll up as well
+      duration: 1000,
+      once: false,
+      mirror: true,
     });
   }, []);
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -75,8 +90,9 @@ export default function WhyChoose() {
             Why Choose Ear We Go?
           </h2>
           <p className="text-lg text-[#64748b] max-w-3xl mx-auto">
-            We've helped thousands of patients who couldn't get satisfactory results elsewhere.
-            Our expertise and Medical Grade Equipment ensure you leave happy and hearing clearly.
+            We've helped thousands of patients who couldn't get satisfactory
+            results elsewhere. Our expertise and Medical Grade Equipment ensure
+            you leave happy and hearing clearly.
           </p>
         </div>
 
@@ -87,7 +103,7 @@ export default function WhyChoose() {
               key={idx}
               className="group relative flex flex-col items-center"
               data-aos="fade-up"
-              data-aos-delay={idx * 150} // staggered delay
+              data-aos-delay={idx * 150}
             >
               {/* Image */}
               <div className="w-full h-[280px] rounded-2xl overflow-hidden">
@@ -107,14 +123,17 @@ export default function WhyChoose() {
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                     <p className="text-sm text-white/90 leading-relaxed line-clamp-3">
-                      {item.desc}
+                      {item.short}
                     </p>
                   </div>
                 </div>
 
                 {/* Arrow */}
                 <div className="flex justify-end">
-                  <button className="w-10 h-10 rounded-full bg-white text-[#00c2b3] flex items-center justify-center shadow-md hover:scale-110 transition">
+                  <button
+                    onClick={() => setSelected(item)}
+                    className="w-10 h-10 rounded-full bg-white text-[#00c2b3] flex items-center justify-center shadow-md hover:scale-110 transition"
+                  >
                     <FiArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -123,6 +142,71 @@ export default function WhyChoose() {
           ))}
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {selected && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Background overlay */}
+          <div
+            onClick={() => setSelected(null)}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fadeIn"
+          ></div>
+
+          {/* Modal Box */}
+          <div className="relative bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl transform transition-all animate-slideUp">
+            {/* Close button */}
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900"
+            >
+              <FiX className="w-6 h-6" />
+            </button>
+
+            {/* Icon + Title */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-lg bg-[#00c2b3] flex items-center justify-center text-white">
+                {selected.icon}
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {selected.title}
+              </h3>
+            </div>
+
+            {/* Content */}
+            <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+              {selected.full}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Tailwind Animations */}
+      <style jsx>{`
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-in-out forwards;
+        }
+        .animate-slideUp {
+          animation: slideUp 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      `}</style>
     </section>
   );
 }
