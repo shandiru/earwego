@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+// src/components/FAQSection.jsx
+"use client";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQSection = () => {
   const faqs = [
@@ -36,11 +40,19 @@ const FAQSection = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // animation speed
+      once: false,   // animate every time on scroll
+      mirror: true,  // also animate on scroll up
+    });
+  }, []);
+
   return (
     <section className="py-16 bg-slate-50">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-4">
             Frequently Asked Questions
           </h2>
@@ -55,6 +67,8 @@ const FAQSection = () => {
             <div
               key={index}
               className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 150} // stagger animation
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -91,7 +105,7 @@ const FAQSection = () => {
         </div>
 
         {/* Contact */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
           <p className="text-slate-600 mb-4">
             Have more questions? We're here to help!
           </p>

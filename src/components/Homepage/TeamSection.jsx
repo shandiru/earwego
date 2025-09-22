@@ -1,5 +1,8 @@
 // src/components/TeamSection.jsx
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const team = [
   {
@@ -23,11 +26,22 @@ developers on the team.`,
 ];
 
 export default function TeamSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation speed
+      once: false,    // trigger every scroll
+      mirror: true,   // also animate when scrolling back up
+    });
+  }, []);
+
   return (
     <section className="bg-[#e9f6f4]">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         {/* Heading */}
-        <header className="mx-auto mb-12 max-w-3xl text-center">
+        <header
+          className="mx-auto mb-12 max-w-3xl text-center"
+          data-aos="fade-up"
+        >
           <h2 className="text-3xl font-serif font-bold tracking-tight text-slate-800 sm:text-4xl">
             Meet the Team
           </h2>
@@ -39,10 +53,12 @@ export default function TeamSection() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {team.map((m) => (
+          {team.map((m, idx) => (
             <article
               key={m.name}
-              className="flex flex-col justify-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8 min-h-[420px]" // <-- added min-h
+              className="flex flex-col justify-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8 min-h-[420px]"
+              data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-delay={idx * 200} // stagger effect
             >
               {/* Avatar */}
               <div className="flex justify-center">

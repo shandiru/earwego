@@ -1,4 +1,6 @@
-import React from "react";
+// src/components/WhyChoose.jsx
+"use client";
+import React, { useEffect } from "react";
 import {
   FiAward,
   FiClock,
@@ -8,6 +10,8 @@ import {
   FiCheckCircle,
   FiArrowRight,
 } from "react-icons/fi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const items = [
   {
@@ -16,21 +20,21 @@ const items = [
       "Unrivalled micro suction experience. We often get cases where individuals have gone elsewhere but not received satisfactory results, but end up happy after visiting us.",
     img: "/dental.png",
     icon: <FiAward className="w-6 h-6 text-white" />,
-  },{
-    title: "Medical Grade  Approved Equipment",
+  },
+  {
+    title: "Medical Grade Approved Equipment",
     desc:
-      "We use the same superior equipment as  Medical Grade Equipment hospitals - far more efficient than high street alternatives for quicker, more comfortable procedures.",
+      "We use the same superior equipment as Medical Grade Equipment hospitals - far more efficient than high street alternatives for quicker, more comfortable procedures.",
     img: "/dental.png",
     icon: <FiActivity className="w-6 h-6 text-white" />,
   },
   {
     title: "Same Day Appointments",
     desc:
-      "No waiting weeks for Medical Grade Equipment  appointments. We offer same-day service when you need it most, often within hours of your call.",
+      "No waiting weeks for Medical Grade Equipment appointments. We offer same-day service when you need it most, often within hours of your call.",
     img: "/dental.png",
     icon: <FiClock className="w-6 h-6 text-white" />,
   },
-  
   {
     title: "High Return Rate",
     desc:
@@ -47,19 +51,26 @@ const items = [
   },
   {
     title: "Complete Care Package",
-    desc:
-      " We ensure your complete satisfaction and optimal hearing experience.",
+    desc: "We ensure your complete satisfaction and optimal hearing experience.",
     img: "/dental.png",
     icon: <FiCheckCircle className="w-6 h-6 text-white" />,
   },
 ];
 
 export default function WhyChoose() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration (ms)
+      once: false, // animate every scroll
+      mirror: true, // animate on scroll up as well
+    });
+  }, []);
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1e293b] mb-4">
             Why Choose Ear We Go?
           </h2>
@@ -75,6 +86,8 @@ export default function WhyChoose() {
             <div
               key={idx}
               className="group relative flex flex-col items-center"
+              data-aos="fade-up"
+              data-aos-delay={idx * 150} // staggered delay
             >
               {/* Image */}
               <div className="w-full h-[280px] rounded-2xl overflow-hidden">

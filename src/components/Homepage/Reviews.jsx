@@ -1,5 +1,8 @@
 // src/components/Reviews.jsx
-import React, { useRef, useState } from "react";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PHONE = "0808 137 1961";
 
@@ -85,11 +88,13 @@ function QuoteIcon() {
   );
 }
 
-function ReviewCard({ review }) {
+function ReviewCard({ review, idx }) {
   return (
     <div
       data-slot="card"
       className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 flex-none w-80 md:w-96 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 snap-start"
+      data-aos="fade-up"
+      data-aos-delay={idx * 150}
     >
       <div data-slot="card-content" className="p-6 h-full">
         <div className="flex items-start justify-between mb-4">
@@ -118,6 +123,14 @@ export default function Reviews() {
   const scrollerRef = useRef(null);
   const [showAll, setShowAll] = useState(false);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
+
   const scrollByWidth = (dir = 1) => {
     const el = scrollerRef.current;
     if (!el) return;
@@ -129,7 +142,7 @@ export default function Reviews() {
     <section id="reviews" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-4">
             What Our Patients Say
           </h2>
@@ -137,7 +150,7 @@ export default function Reviews() {
             Real reviews from real customers across the Midlands
           </p>
 
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
             <div className="flex">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} />
@@ -151,7 +164,7 @@ export default function Reviews() {
         </div>
 
         {/* Scroller with arrows */}
-        <div className="relative">
+        <div className="relative" data-aos="fade-up" data-aos-delay="300">
           {/* Left/Right arrows (desktop only) */}
           <button
             aria-label="Scroll left"
@@ -168,7 +181,7 @@ export default function Reviews() {
             className="flex overflow-x-auto gap-6 pb-6 scrollbar-hide snap-x snap-mandatory"
           >
             {REVIEWS.map((r, idx) => (
-              <ReviewCard key={idx} review={r} />
+              <ReviewCard key={idx} review={r} idx={idx} />
             ))}
           </div>
 
@@ -184,7 +197,7 @@ export default function Reviews() {
 
           {/* Mobile hint */}
           {!showAll && (
-            <div className="flex justify-center mt-2 md:hidden">
+            <div className="flex justify-center mt-2 md:hidden" data-aos="fade-up" data-aos-delay="400">
               <p className="text-sm text-slate-500 bg-white px-4 py-2 rounded-full shadow-sm">
                 ← Scroll to see more reviews →
               </p>
@@ -193,7 +206,7 @@ export default function Reviews() {
         </div>
 
         {/* See more / collapse */}
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6" data-aos="fade-up" data-aos-delay="500">
           <button
             onClick={() => setShowAll((v) => !v)}
             className="px-5 py-2 rounded-lg bg-white shadow hover:shadow-md text-slate-700 border border-slate-200"
@@ -206,7 +219,12 @@ export default function Reviews() {
         {showAll && (
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {REVIEWS.map((r, idx) => (
-              <div key={`grid-${idx}`} className="bg-white rounded-xl shadow p-6">
+              <div
+                key={`grid-${idx}`}
+                className="bg-white rounded-xl shadow p-6"
+                data-aos="fade-up"
+                data-aos-delay={idx * 150}
+              >
                 <div className="flex items-start justify-between mb-3">
                   <QuoteIcon />
                   <div className="flex ml-2">
@@ -226,7 +244,7 @@ export default function Reviews() {
         )}
 
         {/* CTA banner */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
           <div className="bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl p-8 max-w-4xl mx-auto text-white">
             <h3 className="text-2xl font-serif font-bold mb-4">Join Our Happy Customers</h3>
             <p className="text-lg text-blue-50 mb-6">

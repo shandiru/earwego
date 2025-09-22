@@ -1,13 +1,24 @@
 // src/components/Pricing.jsx
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Pricing() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation speed
+      once: false,    // animate every time on scroll
+      mirror: true,   // animate again when scrolling back up
+    });
+  }, []);
+
   return (
     <section id="pricing" className="py-20 bg-[#f0fdf4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#374151] mb-4">
             Simple, Transparent Pricing
           </h2>
@@ -23,6 +34,8 @@ export default function Pricing() {
           <div
             data-slot="card"
             className="bg-white text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-lg border-2 border-white hover:border-[#15803d] transition-colors duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <div
               data-slot="card-header"
@@ -45,7 +58,6 @@ export default function Pricing() {
                   "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
-                 
                 ].map((text) => (
                   <li key={text} className="flex items-center">
                     <svg
@@ -90,6 +102,8 @@ export default function Pricing() {
           <div
             data-slot="card"
             className="bg-white text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-lg border-2 border-[#15803d] relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <div className="absolute top-0 right-0 bg-[#84cc16] text-white px-3 py-1 text-sm font-semibold">
               POPULAR
@@ -117,7 +131,6 @@ export default function Pricing() {
                   "Medical Grade Equipment",
                   "Home visit included",
                   "Same day appointments",
-                 
                   "Complete ear health check",
                 ].map((text) => (
                   <li key={text} className="flex items-center">
@@ -161,7 +174,7 @@ export default function Pricing() {
         </div>
 
         {/* Footer note */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
           <p className="text-lg text-[#374151] mb-4">
             <strong>All prices include home visit - no additional travel charges</strong>
           </p>

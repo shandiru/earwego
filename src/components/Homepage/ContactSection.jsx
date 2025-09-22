@@ -1,12 +1,23 @@
 // src/components/ContactSection.jsx
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation speed
+      once: false,    // animate every time on scroll
+      mirror: true,   // also animate when scrolling back up
+    });
+  }, []);
+
   return (
     <section id="contact" className="py-20 bg-[#f0fdf4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#374151] mb-4">
             Get In Touch
           </h2>
@@ -17,14 +28,18 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* LEFT: Contact Info */}
-          <div>
+          <div data-aos="fade-right">
             <h3 className="text-2xl font-serif font-bold text-[#374151] mb-8">
               Contact Information
             </h3>
 
             <div className="space-y-6">
               {/* Phone */}
-              <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
+              <div
+                className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <div className="p-6 flex items-center">
                   <div className="bg-[#15803d] p-3 rounded-lg mr-4">
                     <svg
@@ -54,7 +69,11 @@ const ContactSection = () => {
               </div>
 
               {/* Email */}
-              <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
+              <div
+                className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div className="p-6 flex items-center">
                   <div className="bg-[#15803d] p-3 rounded-lg mr-4">
                     <svg
@@ -85,7 +104,11 @@ const ContactSection = () => {
               </div>
 
               {/* Address */}
-              <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
+              <div
+                className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div className="p-6 flex items-center">
                   <div className="bg-[#15803d] p-3 rounded-lg mr-4">
                     <svg
@@ -106,13 +129,16 @@ const ContactSection = () => {
                     <h4 className="font-semibold text-[#374151]">Address</h4>
                     <p className="text-gray-600">Great Northern Rd,</p>
                     <p className="text-gray-600">Derby, DE1 1LR</p>
-                
                   </div>
                 </div>
               </div>
 
               {/* Service Areas */}
-              <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
+              <div
+                className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div className="p-6 flex items-center">
                   <div className="bg-[#15803d] p-3 rounded-lg mr-4">
                     <svg
@@ -140,7 +166,10 @@ const ContactSection = () => {
           </div>
 
           {/* RIGHT: Appointment Form */}
-          <div className="bg-white rounded-2xl shadow-sm border border-emerald-100">
+          <div
+            className="bg-white rounded-2xl shadow-sm border border-emerald-100"
+            data-aos="fade-left"
+          >
             <div className="px-6 pt-6 pb-4">
               <div className="font-semibold text-2xl font-serif text-[#374151]">
                 Book Your Appointment

@@ -1,17 +1,30 @@
 // src/components/Hero.jsx
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HERO_IMG =
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20design%20%286%29-Ak7Z5ppjywHX6EHegNL2tftxTGYdRC.png"; // replace with your file if you host locally
 
 export default function Hero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration (ms)
+      once: false,    // allow animations every scroll up/down
+      mirror: true,   // animate when scrolling back up
+    });
+  }, []);
+
   return (
-    <section id="home" className="bg-gradient-to-br from-[#f8fafc] to-white py-16 sm:py-20">
+    <section
+      id="home"
+      className="bg-gradient-to-br from-[#f8fafc] to-white py-16 sm:py-20"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column */}
-          <div>
-            {/* Heading with fluid size that never overflows */}
+          <div data-aos="fade-right">
             <h1
               className="font-serif font-bold text-[#1e293b] leading-tight mb-6"
               style={{ fontSize: "clamp(28px, 6vw, 48px)" }}
@@ -22,15 +35,18 @@ export default function Hero() {
             <p className="text-xl text-[#1e293b] mb-4">
               Professional Earwax Removal in the Comfort of Your Home
             </p>
-            <p className="text-lg text-[#64748b] mb-8">Safe, Compassionate Care Tailored for You</p>
+            <p className="text-lg text-[#64748b] mb-8">
+              Safe, Compassionate Care Tailored for You
+            </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
                 href="tel:+447989668752"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all shadow-xs h-10 rounded-md px-6 has-[>svg]:px-4 bg-[#059669] hover:bg-[#047857] text-white"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all shadow-xs h-10 rounded-md px-6 bg-[#059669] hover:bg-[#047857] text-white"
+                data-aos="zoom-in"
+                data-aos-delay="200"
               >
-                {/* Phone icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -49,19 +65,21 @@ export default function Hero() {
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all border shadow-xs h-10 rounded-md px-6 has-[>svg]:px-4 border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb] hover:text-white bg-transparent"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all border shadow-xs h-10 rounded-md px-6 border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb] hover:text-white bg-transparent"
+                data-aos="zoom-in"
+                data-aos-delay="400"
               >
                 Learn More
               </a>
             </div>
 
-            {/* Feature bullets 
-                - 1 column on mobile, 3 columns from md
-                - consistent icon sizing and spacing
-            */}
+            {/* Feature bullets */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-              <div className="flex items-center text-[#1e293b]">
-                {/* Map pin */}
+              <div
+                className="flex items-center text-[#1e293b]"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -79,8 +97,11 @@ export default function Hero() {
                 Home and Work
               </div>
 
-              <div className="flex items-center text-[#1e293b]">
-                {/* Clock */}
+              <div
+                className="flex items-center text-[#1e293b]"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -97,13 +118,15 @@ export default function Hero() {
                 </svg>
                 Same Day Appointments
               </div>
-
-             
             </div>
           </div>
 
           {/* Right column: image card */}
-          <div className="relative flex justify-center">
+          <div
+            className="relative flex justify-center"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <div className="bg-white rounded-2xl shadow-2xl p-10 max-w-md w-full">
               <img
                 src={HERO_IMG}
@@ -112,11 +135,7 @@ export default function Hero() {
                 loading="lazy"
                 decoding="async"
               />
-              <div className="text-center mt-6">
-                <p className="text-[#64748b] text-sm font-medium">
-                  Professional • Trusted • Experienced
-                </p>
-              </div>
+              
             </div>
           </div>
         </div>
