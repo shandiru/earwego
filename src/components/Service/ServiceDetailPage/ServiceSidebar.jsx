@@ -5,7 +5,7 @@ import { FiChevronRight } from "react-icons/fi";
 export default function ServiceSidebar({ items, activeId, onSelect }) {
   return (
     <aside className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-      <h3 className="text-slate-800 font-semibold mb-4">Other Services</h3>
+      <h3 className="text-slate-800 font-semibold mb-4">Recognising the Symptoms</h3>
 
       <div className="space-y-3">
         {items.map((it) => {

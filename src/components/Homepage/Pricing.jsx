@@ -33,53 +33,58 @@ export default function Pricing() {
           {/* Single Ear */}
           <div
             data-slot="card"
-            className="bg-white text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-lg border-2 border-white hover:border-[#15803d] transition-colors duration-300"
+            className="bg-white text-card-foreground flex flex-col justify-between rounded-xl py-6 shadow-lg border-2 border-white hover:border-[#15803d] transition-colors duration-300"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div
-              data-slot="card-header"
-              className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 text-center pb-4"
-            >
+            <div>
               <div
-                data-slot="card-title"
-                className="font-semibold text-2xl font-serif text-[#374151]"
+                data-slot="card-header"
+                className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 text-center pb-4"
               >
-                Single Ear
+                <div
+                  data-slot="card-title"
+                  className="font-semibold text-2xl font-serif text-[#374151]"
+                >
+                  Single Ear
+                </div>
+                <div className="text-4xl font-bold text-[#15803d] mt-4">£50</div>
+                <p className="text-gray-600">Per ear treatment</p>
               </div>
-              <div className="text-4xl font-bold text-[#15803d] mt-4">£50</div>
-              <p className="text-gray-600">Per ear treatment</p>
+
+              <div data-slot="card-content" className="px-6">
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "Professional micro suction",
+                    "Medical Grade Equipment",
+                    "Home visit included",
+                    "Same day appointments",
+                  ].map((text) => (
+                    <li key={text} className="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-5 h-5 text-[#84cc16] mr-3"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div data-slot="card-content" className="px-6">
-              <ul className="space-y-3 mb-6">
-                {[
-                  "Professional micro suction",
-                  "Medical Grade Equipment",
-                  "Home visit included",
-                  "Same day appointments",
-                ].map((text) => (
-                  <li key={text} className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-5 h-5 text-[#84cc16] mr-3"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {text}
-                  </li>
-                ))}
-              </ul>
-
+            {/* Button inside card, aligned bottom */}
+            <div className="px-6 mt-auto">
               <a
                 href="tel:+447989668752"
-                className="inline-flex items-center justify-center gap-2 w-full bg-[#15803d] hover:bg-[#166534] text-white rounded-md px-4 py-2 text-sm font-medium transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full bg-[#15803d] hover:bg-[#166534] text-white rounded-md px-4 py-3 text-sm font-medium transition-all"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +106,7 @@ export default function Pricing() {
           {/* Both Ears (Popular) */}
           <div
             data-slot="card"
-            className="bg-white text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-lg border-2 border-[#15803d] relative overflow-hidden"
+            className="bg-white text-card-foreground flex flex-col justify-between rounded-xl py-6 shadow-lg border-2 border-[#15803d] relative overflow-hidden"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -109,51 +114,56 @@ export default function Pricing() {
               POPULAR
             </div>
 
-            <div
-              data-slot="card-header"
-              className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 text-center pb-4"
-            >
+            <div>
               <div
-                data-slot="card-title"
-                className="font-semibold text-2xl font-serif text-[#374151]"
+                data-slot="card-header"
+                className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 text-center pb-4"
               >
-                Both Ears
+                <div
+                  data-slot="card-title"
+                  className="font-semibold text-2xl font-serif text-[#374151]"
+                >
+                  Both Ears
+                </div>
+                <div className="text-4xl font-bold text-[#15803d] mt-4">£60</div>
+                <p className="text-gray-600">Complete treatment</p>
+                <p className="text-sm text-[#84cc16] font-semibold">Save £40!</p>
               </div>
-              <div className="text-4xl font-bold text-[#15803d] mt-4">£60</div>
-              <p className="text-gray-600">Complete treatment</p>
-              <p className="text-sm text-[#84cc16] font-semibold">Save £40!</p>
+
+              <div data-slot="card-content" className="px-6">
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "Professional micro suction",
+                    "Medical Grade Equipment",
+                    "Home visit included",
+                    "Same day appointments",
+                    "Complete ear health check",
+                  ].map((text) => (
+                    <li key={text} className="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-5 h-5 text-[#84cc16] mr-3"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div data-slot="card-content" className="px-6">
-              <ul className="space-y-3 mb-6">
-                {[
-                  "Professional micro suction",
-                  "Medical Grade Equipment",
-                  "Home visit included",
-                  "Same day appointments",
-                  "Complete ear health check",
-                ].map((text) => (
-                  <li key={text} className="flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-5 h-5 text-[#84cc16] mr-3"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {text}
-                  </li>
-                ))}
-              </ul>
-
+            {/* Button inside card, aligned bottom */}
+            <div className="px-6 mt-auto">
               <a
                 href="tel:+447989668752"
-                className="inline-flex items-center justify-center gap-2 w-full bg-[#84cc16] hover:bg-[#65a30d] text-white rounded-md px-4 py-2 text-sm font-medium transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full bg-[#84cc16] hover:bg-[#65a30d] text-white rounded-md px-4 py-3 text-sm font-medium transition-all"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

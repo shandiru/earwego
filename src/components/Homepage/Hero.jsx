@@ -4,8 +4,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const HERO_IMG =
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20design%20%286%29-Ak7Z5ppjywHX6EHegNL2tftxTGYdRC.png"; // replace with your file if you host locally
+const HERO_IMG ="news-logo-removebg-preview.png"; // replace with your file if you host locally
 
 export default function Hero() {
   useEffect(() => {

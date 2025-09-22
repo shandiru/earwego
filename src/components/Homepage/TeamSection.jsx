@@ -6,22 +6,16 @@ import "aos/dist/aos.css";
 
 const team = [
   {
-    name: "Sarah Johnson",
-    role: "Lead Designer",
-    avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=640&auto=format&fit=crop",
-    bio: `Sarah brings over 8 years of experience in user experience design and has led
-design teams at several Fortune 500 companies. She's passionate about creating
-intuitive interfaces that delight users.`,
+    name: "Rab",
+    role: "Founder",
+    avatar: "/img-right.jpeg", // Replace with real image
+    bio: `With over a decade of experience in professional earwax removal, Rab has built a reputation for his steady hands, expert knowledge, and friendly approach. His dedication ensures every client receives safe, effective treatment in a comfortable environment.`,
   },
   {
-    name: "Michael Chen",
-    role: "Senior Developer",
-    avatar:
-      "https://images.unsplash.com/photo-1502767089025-6572583495b0?q=80&w=640&auto=format&fit=crop",
-    bio: `Michael is a full-stack developer with expertise in React, Node.js, and cloud
-architecture. He loves solving complex technical challenges and mentoring junior
-developers on the team.`,
+    name: "Rhegan",
+    role: "Digital & Operations Support",
+    avatar: "/img-left.jpeg", // Replace with real image
+    bio: `Rhegan plays a key role in running the business day to day, from managing our social media presence to helping clients connect with us online. He brings a modern digital perspective, making sure our family business is easy to reach and continues to grow in today’s world.`,
   },
 ];
 
@@ -29,8 +23,8 @@ export default function TeamSection() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation speed
-      once: false,    // trigger every scroll
-      mirror: true,   // also animate when scrolling back up
+      once: false, // trigger every scroll
+      mirror: true, // also animate when scrolling back up
     });
   }, []);
 
@@ -46,8 +40,9 @@ export default function TeamSection() {
             Meet the Team
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-            Get to know the talented individuals behind our success. Our team combines
-            creativity, technical expertise, and passion to deliver exceptional results.
+            Get to know the people at the heart of our family business. Together,
+            we blend years of hands-on experience with a fresh digital approach
+            to deliver trusted, professional care.
           </p>
         </header>
 
