@@ -9,8 +9,11 @@ export default function BulletList({ items = [], columns = 1 }) {
   return (
     <ul className={["space-y-3", colClass].join(" ")}>
       {items.map((text, i) => (
-        <li key={i} className="flex items-start gap-3 text-slate-700">
-          <span className="mt-1 text-teal-600">
+        <li
+          key={i}
+          className="flex items-start gap-3 text-[#334155]" // Neutral balance for body text
+        >
+          <span className="mt-1 text-emerald-600"> {/* Emerald green for icons */}
             <FiCheckCircle className="h-5 w-5" />
           </span>
           <span>{text}</span>
