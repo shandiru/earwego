@@ -42,21 +42,21 @@ const FAQSection = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 800, // animation speed
-      once: false,   // animate every time on scroll
-      mirror: true,  // also animate on scroll up
+      duration: 800,
+      once: false,
+      mirror: true,
     });
   }, []);
 
   return (
-    <section className="py-16 bg-slate-50" id="faq">
+    <section className="py-16 bg-[#F8FAFC]" id="faq">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#334155] max-w-2xl mx-auto">
             Get answers to common questions about our ear wax removal services
           </p>
         </div>
@@ -68,13 +68,13 @@ const FAQSection = () => {
               key={index}
               className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"
               data-aos="fade-up"
-              data-aos-delay={index * 150} // stagger animation
+              data-aos-delay={index * 150}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-[#F8FAFC] transition-colors"
               >
-                <h3 className="text-lg font-semibold text-slate-800 pr-4">
+                <h3 className="text-lg font-semibold text-[#0D1525] pr-4">
                   {faq.question}
                 </h3>
                 <svg
@@ -87,7 +87,7 @@ const FAQSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={`h-5 w-5 text-blue-600 flex-shrink-0 transition-transform ${
+                  className={`h-5 w-5 text-[#10B981] flex-shrink-0 transition-transform ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
@@ -97,7 +97,7 @@ const FAQSection = () => {
 
               {openIndex === index && (
                 <div className="px-6 pb-4 border-t border-slate-100">
-                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-[#334155] leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -106,12 +106,12 @@ const FAQSection = () => {
 
         {/* Contact */}
         <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
-          <p className="text-slate-600 mb-4">
+          <p className="text-[#334155] mb-4">
             Have more questions? We're here to help!
           </p>
           <a
             href="tel:08081371961"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-[#10B981] text-white font-semibold rounded-lg hover:bg-[#0D1525] transition-colors"
           >
             Call Us: 0808 137 1961
           </a>

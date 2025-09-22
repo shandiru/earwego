@@ -54,7 +54,7 @@ const REVIEWS = [
 function Star({ className = "w-6 h-6" }) {
   return (
     <svg
-      className={`${className} fill-amber-400 text-amber-400`}
+      className={`${className} fill-[#FFD700] text-[#FFD700]`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
@@ -72,7 +72,7 @@ function Star({ className = "w-6 h-6" }) {
 function QuoteIcon() {
   return (
     <svg
-      className="w-8 h-8 text-blue-600 flex-shrink-0"
+      className="w-8 h-8 text-[#10B981] flex-shrink-0"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
@@ -92,7 +92,7 @@ function ReviewCard({ review, idx }) {
   return (
     <div
       data-slot="card"
-      className="text-card-foreground flex flex-col gap-6 rounded-xl py-6 flex-none w-80 md:w-96 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 snap-start"
+      className="text-[#334155] flex flex-col gap-6 rounded-xl py-6 flex-none w-80 md:w-96 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 snap-start"
       data-aos="fade-up"
       data-aos-delay={idx * 150}
     >
@@ -106,13 +106,13 @@ function ReviewCard({ review, idx }) {
           </div>
         </div>
 
-        <p className="text-slate-700 mb-6 leading-relaxed text-sm line-clamp-6">
+        <p className="text-[#334155] mb-6 leading-relaxed text-sm line-clamp-6">
           {review.text}
         </p>
 
         <div className="mt-auto pt-4 border-t border-slate-100">
-          <p className="font-semibold text-slate-800 text-base">{review.name}</p>
-          <p className="text-sm text-blue-600 font-medium">{review.role}</p>
+          <p className="font-semibold text-[#0D1525] text-base">{review.name}</p>
+          <p className="text-sm text-[#10B981] font-medium">{review.role}</p>
         </div>
       </div>
     </div>
@@ -139,14 +139,14 @@ export default function Reviews() {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="reviews" className="py-20 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
             What Our Patients Say
           </h2>
-          <p className="text-lg text-slate-600 mb-6">
+          <p className="text-lg text-[#334155] mb-6">
             Real reviews from real customers across the Midlands
           </p>
 
@@ -156,16 +156,16 @@ export default function Reviews() {
                 <Star key={i} />
               ))}
             </div>
-            <span className="ml-3 text-lg font-semibold text-slate-800">
+            <span className="ml-3 text-lg font-semibold text-[#0D1525]">
               5.0 out of 5
             </span>
-            <span className="ml-2 text-slate-600">• 7 reviews</span>
+            <span className="ml-2 text-[#334155]">• 7 reviews</span>
           </div>
         </div>
 
         {/* Scroller with arrows */}
         <div className="relative" data-aos="fade-up" data-aos-delay="300">
-          {/* Left/Right arrows (desktop only) */}
+          {/* Left/Right arrows */}
           <button
             aria-label="Scroll left"
             onClick={() => scrollByWidth(-1)}
@@ -198,7 +198,7 @@ export default function Reviews() {
           {/* Mobile hint */}
           {!showAll && (
             <div className="flex justify-center mt-2 md:hidden" data-aos="fade-up" data-aos-delay="400">
-              <p className="text-sm text-slate-500 bg-white px-4 py-2 rounded-full shadow-sm">
+              <p className="text-sm text-[#334155] bg-white px-4 py-2 rounded-full shadow-sm">
                 ← Scroll to see more reviews →
               </p>
             </div>
@@ -209,7 +209,7 @@ export default function Reviews() {
         <div className="flex justify-center mt-6" data-aos="fade-up" data-aos-delay="500">
           <button
             onClick={() => setShowAll((v) => !v)}
-            className="px-5 py-2 rounded-lg bg-white shadow hover:shadow-md text-slate-700 border border-slate-200"
+            className="px-5 py-2 rounded-lg bg-white shadow hover:shadow-md text-[#334155] border border-slate-200"
           >
             {showAll ? "Hide extra reviews" : "See more reviews"}
           </button>
@@ -233,10 +233,10 @@ export default function Reviews() {
                     ))}
                   </div>
                 </div>
-                <p className="text-slate-700 mb-4 leading-relaxed text-sm">{r.text}</p>
+                <p className="text-[#334155] mb-4 leading-relaxed text-sm">{r.text}</p>
                 <div className="pt-4 border-t border-slate-100">
-                  <p className="font-semibold text-slate-800 text-base">{r.name}</p>
-                  <p className="text-sm text-blue-600 font-medium">{r.role}</p>
+                  <p className="font-semibold text-[#0D1525] text-base">{r.name}</p>
+                  <p className="text-sm text-[#10B981] font-medium">{r.role}</p>
                 </div>
               </div>
             ))}
@@ -245,15 +245,15 @@ export default function Reviews() {
 
         {/* CTA banner */}
         <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-          <div className="bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl p-8 max-w-4xl mx-auto text-white">
+          <div className="bg-gradient-to-r from-[#10B981] to-[#FFD700] rounded-xl p-8 max-w-4xl mx-auto text-white">
             <h3 className="text-2xl font-serif font-bold mb-4">Join Our Happy Customers</h3>
-            <p className="text-lg text-blue-50 mb-6">
+            <p className="text-lg text-yellow-100 mb-6">
               Experience professional ear wax removal with same-day appointments and home visits
               across the Midlands.
             </p>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+              className="inline-block bg-white text-[#0D1525] font-semibold px-8 py-3 rounded-lg hover:bg-yellow-50 transition-colors duration-200"
             >
               Call Now: {PHONE}
             </a>
@@ -261,7 +261,7 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* Utilities (hide scrollbar + clamp text) */}
+      {/* Utilities */}
       <style>{`
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }

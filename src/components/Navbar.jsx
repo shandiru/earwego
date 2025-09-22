@@ -44,7 +44,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-gray-800 hover:text-[#0d1525] transition-colors font-medium text-base whitespace-nowrap"
+                className="text-[#4B5563] hover:text-[#0D1525] transition-colors font-medium text-base whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -55,7 +55,7 @@ const Navbar = () => {
           <a
             href="tel:+447989668752"
             className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold shadow h-10 px-5
-              bg-emerald-600 hover:bg-emerald-700 text-white transition-all"
+              bg-[#43AA8B] hover:bg-[#368a75] text-white transition-all"
           >
             <Phone className="w-4 h-4" />
             Call Now
@@ -80,7 +80,7 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#0d1525]"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-[#4B5563] hover:bg-[#F8FAFC] hover:text-[#0D1525]"
                 >
                   {link.label}
                 </a>
@@ -91,7 +91,7 @@ const Navbar = () => {
               href="tel:+447989668752"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-semibold h-10 px-4
-                bg-emerald-600 hover:bg-emerald-700 text-white transition-all"
+                bg-[#43AA8B] hover:bg-[#368a75] text-white transition-all"
             >
               <Phone className="w-4 h-4" />
               Call Now

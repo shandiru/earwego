@@ -1,5 +1,5 @@
 // src/components/FindUs.jsx
-"use client"; // only needed if you’re mixing with Next.js, safe in React too
+"use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -7,18 +7,18 @@ import "aos/dist/aos.css";
 export default function FindUs() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation speed
-      once: false,    // animate on every scroll
-      mirror: true,   // animate again when scrolling back up
+      duration: 1000,
+      once: false,
+      mirror: true,
     });
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-[#f8fafc]">
+    <section className="py-16 px-4 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h2
-          className="text-3xl md:text-4xl font-serif font-bold text-[#0d1525] mb-10"
+          className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-10"
           data-aos="fade-up"
         >
           Find Us
@@ -26,7 +26,7 @@ export default function FindUs() {
 
         {/* Google Map */}
         <div
-          className="rounded-xl overflow-hidden shadow-lg w-full h-[400px]"
+          className="rounded-xl overflow-hidden shadow-lg w-full h-[400px] border border-gray-200"
           data-aos="zoom-in-up"
           data-aos-delay="200"
         >
@@ -42,13 +42,13 @@ export default function FindUs() {
           ></iframe>
         </div>
 
-        {/* Optional Get Directions button */}
+        {/* Get Directions button */}
         <div className="mt-6" data-aos="fade-up" data-aos-delay="400">
           <a
             href="https://www.google.com/maps/place/WGC5%2BCX,+Derby"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+            className="inline-block bg-[#10B981] hover:bg-[#0D1525] text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg"
           >
             Get Directions
           </a>

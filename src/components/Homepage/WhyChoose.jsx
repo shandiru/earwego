@@ -86,10 +86,10 @@ export default function WhyChoose() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1e293b] mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
             Why Choose Ear We Go?
           </h2>
-          <p className="text-lg text-[#64748b] max-w-3xl mx-auto">
+          <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
             We've helped thousands of patients who couldn't get satisfactory
             results elsewhere. Our expertise and Medical Grade Equipment ensure
             you leave happy and hearing clearly.
@@ -115,7 +115,7 @@ export default function WhyChoose() {
               </div>
 
               {/* Overlay Box */}
-              <div className="-mt-10 w-[90%] bg-[#00c2b3] text-white rounded-2xl shadow-md p-6 relative h-[200px] flex flex-col justify-between">
+              <div className="-mt-10 w-[90%] bg-[#43AA8B] text-white rounded-2xl shadow-md p-6 relative h-[200px] flex flex-col justify-between">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                     {item.icon}
@@ -132,7 +132,7 @@ export default function WhyChoose() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => setSelected(item)}
-                    className="w-10 h-10 rounded-full bg-white text-[#00c2b3] flex items-center justify-center shadow-md hover:scale-110 transition"
+                    className="w-10 h-10 rounded-full bg-white text-[#43AA8B] flex items-center justify-center shadow-md hover:scale-110 transition"
                   >
                     <FiArrowRight className="w-4 h-4" />
                   </button>
@@ -164,16 +164,16 @@ export default function WhyChoose() {
 
             {/* Icon + Title */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-lg bg-[#00c2b3] flex items-center justify-center text-white">
+              <div className="w-12 h-12 rounded-lg bg-[#9C79B3] flex items-center justify-center text-white">
                 {selected.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 className="text-2xl font-bold text-[#0D1525]">
                 {selected.title}
               </h3>
             </div>
 
             {/* Content */}
-            <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+            <p className="text-[#4B5563] whitespace-pre-line leading-relaxed">
               {selected.full}
             </p>
           </div>
