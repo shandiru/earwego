@@ -9,7 +9,7 @@ import Reviews from "../components/Homepage/Reviews";
 import FAQSection from "../components/Homepage/FAQSection";
 import ContactSection from "../components/Homepage/ContactSection";
 import TeamSection from "../components/Homepage/TeamSection";
-
+import FindUs from "../components/Homepage/FindUs";
 function Home() {
   return (
     <>
@@ -21,6 +21,7 @@ function Home() {
       <Reviews />
       <FAQSection />
       <ContactSection />
+      <FindUs />
     
     </>
   );
