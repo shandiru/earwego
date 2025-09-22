@@ -1,4 +1,6 @@
+// src/components/Footer.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -16,7 +18,7 @@ export default function Footer() {
               areas with convenient home visits.
             </p>
             <p className="text-sm text-gray-400">
-            Medical Grade Equipment • Same day appointments • Thousands of
+              Medical Grade Equipment • Same day appointments • Thousands of
               satisfied customers
             </p>
           </div>
@@ -25,11 +27,62 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-[#84cc16] transition-colors">Home</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-[#84cc16] transition-colors">Why Choose Us</a></li>
-              <li><a href="#pricing" className="text-gray-300 hover:text-[#84cc16] transition-colors">Pricing</a></li>
-              <li><a href="#reviews" className="text-gray-300 hover:text-[#84cc16] transition-colors">Reviews</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-[#84cc16] transition-colors">Contact</a></li>
+              <li>
+                <a
+                  href="#home"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#reviews"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Reviews
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/terms-conditions"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="text-gray-300 hover:text-[#84cc16] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -39,7 +92,15 @@ export default function Footer() {
             <div className="space-y-3">
               {/* Phone */}
               <div className="flex items-center">
-                <svg className="w-4 h-4 mr-3 text-[#84cc16]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4 mr-3 text-[#84cc16]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
                 <a
@@ -53,7 +114,15 @@ export default function Footer() {
 
               {/* Email */}
               <div className="flex items-center">
-                <svg className="w-4 h-4 mr-3 text-[#84cc16]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4 mr-3 text-[#84cc16]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
                   <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
@@ -68,15 +137,21 @@ export default function Footer() {
 
               {/* Address */}
               <div className="flex items-start">
-                <svg className="w-4 h-4 mr-3 text-[#84cc16] mt-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4 mr-3 text-[#84cc16] mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <address className="not-italic text-gray-300">
                   <p>Great Northern Rd,</p>
                   <p>Derby, DE1 1LR</p>
-
-
                 </address>
               </div>
             </div>
@@ -84,9 +159,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-600 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-600 mt-8 pt-8 text-center space-y-2">
           <p className="text-gray-400">
-            © 2024 Ear We Go. All rights reserved. Professional earwax removal services.
+            © 2024 Ear We Go. All rights reserved. Professional earwax removal
+            services.
+          </p>
+          <p className="text-sm text-gray-400">
+            Powered by{" "}
+            <a
+              href="https://www.ansely.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#84cc16] hover:underline"
+            >
+              Ansely
+            </a>
           </p>
         </div>
       </div>
