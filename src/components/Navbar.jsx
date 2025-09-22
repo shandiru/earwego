@@ -27,18 +27,24 @@ const Navbar = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* ✅ Text-only Brand */}
-          <h1 className="text-2xl font-serif font-bold text-[#2563eb] whitespace-nowrap">
-            Ear We Go
-          </h1>
+          {/* ✅ Logo */}
+          <div className="flex items-center">
+            <img
+              src="/news-logo-removebg-preview.png"
+              alt="Ear We Go Logo"
+              className="h-24 sm:h-24 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-8">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[#1e293b] hover:text-[#2563eb] transition-colors font-medium whitespace-nowrap"
+                className="text-gray-800 hover:text-[#0d1525] transition-colors font-medium text-base whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -48,8 +54,8 @@ const Navbar = () => {
           {/* Call Button (Desktop) */}
           <a
             href="tel:+447989668752"
-            className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium shadow-xs h-10 px-4
-              bg-[#059669] hover:bg-[#047857] text-white transition-all"
+            className="hidden md:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold shadow h-10 px-5
+              bg-emerald-600 hover:bg-emerald-700 text-white transition-all"
           >
             <Phone className="w-4 h-4" />
             Call Now
@@ -74,7 +80,7 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-[#1e293b] hover:bg-gray-50"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#0d1525]"
                 >
                   {link.label}
                 </a>
@@ -84,8 +90,8 @@ const Navbar = () => {
             <a
               href="tel:+447989668752"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-medium h-10 px-4
-                bg-[#059669] hover:bg-[#047857] text-white transition-all"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-md text-sm font-semibold h-10 px-4
+                bg-emerald-600 hover:bg-emerald-700 text-white transition-all"
             >
               <Phone className="w-4 h-4" />
               Call Now
