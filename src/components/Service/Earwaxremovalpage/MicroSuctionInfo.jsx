@@ -3,27 +3,27 @@ import React from "react";
 import { FiShield, FiClock, FiCheckCircle } from "react-icons/fi";
 
 export default function MicroSuctionInfo({
-  imageSrc = "/professional-medical-ear-examination-with-microsco.png", // <-- replace with your own file path
+  imageSrc = "/professional-medical-ear-examination-with-microsco.png", 
   imageAlt = "Professional ear examination with microscope",
 }) {
   return (
-    <section className="py-16 bg-slate-50/40">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0D1525] mb-4">
             What is Micro Suction Ear Wax Removal?
           </h2>
-          <p className="text-lg text-slate-600">
-            Micro suction is the safest and most effective way to remove ear wax. Instead of using
-            water or cotton buds (which can push wax deeper), we use a gentle medical suction device
-            to carefully remove the blockage.
+          <p className="text-lg text-[#334155]">
+            Micro suction is the safest and most effective way to remove ear wax. 
+            Instead of using water or cotton buds (which can push wax deeper), 
+            we use a gentle medical suction device to carefully remove the blockage.
           </p>
         </div>
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-8 items-center">
-          {/* Image - you control this file */}
+          {/* Image */}
           <div>
             <img
               src={imageSrc}
@@ -37,12 +37,12 @@ export default function MicroSuctionInfo({
           <div className="space-y-8">
             {/* Safe & Gentle */}
             <div className="flex items-start gap-4">
-              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-100">
+              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-emerald-50 text-[#10B981] ring-1 ring-emerald-200">
                 <FiShield className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Safe &amp; Gentle</h3>
-                <p className="text-slate-600">
+                <h3 className="font-semibold text-[#0D1525] mb-1">Safe &amp; Gentle</h3>
+                <p className="text-[#334155]">
                   No water, no syringing, no risk of damage to your ears.
                 </p>
               </div>
@@ -50,12 +50,12 @@ export default function MicroSuctionInfo({
 
             {/* Quick Relief */}
             <div className="flex items-start gap-4">
-              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-100">
+              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-emerald-50 text-[#10B981] ring-1 ring-emerald-200">
                 <FiClock className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Quick Relief</h3>
-                <p className="text-slate-600">
+                <h3 className="font-semibold text-[#0D1525] mb-1">Quick Relief</h3>
+                <p className="text-[#334155]">
                   Appointments usually take just 15–30 minutes.
                 </p>
               </div>
@@ -63,13 +63,13 @@ export default function MicroSuctionInfo({
 
             {/* Immediate Results */}
             <div className="flex items-start gap-4">
-              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-100">
+              <span className="mt-1 flex-shrink-0 grid place-items-center h-8 w-8 rounded-lg bg-emerald-50 text-[#10B981] ring-1 ring-emerald-200">
                 <FiCheckCircle className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-semibold text-slate-900 mb-1">Immediate Results</h3>
-                <p className="text-slate-600">
-                  Within minutes able to hear clearly again - instant relief
+                <h3 className="font-semibold text-[#0D1525] mb-1">Immediate Results</h3>
+                <p className="text-[#334155]">
+                  Within minutes able to hear clearly again — instant relief.
                 </p>
               </div>
             </div>

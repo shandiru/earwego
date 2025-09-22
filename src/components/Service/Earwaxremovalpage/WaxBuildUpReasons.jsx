@@ -18,7 +18,7 @@ const reasons = [
   {
     title: "Tinnitus",
     desc: "Ringing or buzzing sounds in the ears",
-    Icon: LuUsers, // use a people/outline icon to match the style in your image
+    Icon: LuUsers,
   },
   {
     title: "Earache",
@@ -44,14 +44,14 @@ const reasons = [
 
 export default function WaxBuildUpReasons() {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50">
       <div className="mx-auto max-w-6xl px-4">
         {/* Heading */}
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl font-bold text-[#0D1525] mb-6">
             Why Do We Get Ear Wax Build-Up?
           </h2>
-          <p className="text-lg text-slate-600 mb-12">
+          <p className="text-lg text-[#334155] mb-12">
             Ear wax is natural — it protects your ears from dust, dirt, and bacteria.
             But sometimes it builds up and causes uncomfortable symptoms.
           </p>
@@ -62,14 +62,15 @@ export default function WaxBuildUpReasons() {
           {reasons.map(({ title, desc, Icon }) => (
             <article
               key={title}
-              className="bg-slate-50 text-slate-900 rounded-xl border border-slate-200 py-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white text-[#0D1525] rounded-xl border border-gray-200 py-6 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="px-6 text-center">
-                <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-lg">{title}</h3>
+                {/* Icon with emerald accent */}
+                <Icon className="h-12 w-12 text-[#10B981] mx-auto mb-4" />
+                <h3 className="font-semibold text-lg text-[#0D1525]">{title}</h3>
               </div>
               <div className="px-6 mt-2 text-center">
-                <p className="text-sm text-slate-600">{desc}</p>
+                <p className="text-sm text-[#334155]">{desc}</p>
               </div>
             </article>
           ))}

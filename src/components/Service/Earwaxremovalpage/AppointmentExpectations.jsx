@@ -11,7 +11,7 @@ const steps = [
   {
     title: "Explanation",
     desc: "A clear explanation of the procedure and what to expect",
-    Icon: FiInfo, // <-- exists in Feather
+    Icon: FiInfo,
   },
   {
     title: "Treatment",
@@ -27,14 +27,14 @@ const steps = [
 
 export default function AppointmentExpectations() {
   return (
-    <section className="py-16 bg-slate-50/40">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0D1525] mb-4">
             What to Expect at Your Appointment
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-[#334155]">
             A comfortable and professional experience from start to finish
           </p>
         </div>
@@ -44,14 +44,14 @@ export default function AppointmentExpectations() {
           {steps.map(({ title, desc, Icon }) => (
             <article
               key={title}
-              className="bg-white text-slate-900 rounded-xl border border-slate-200 shadow-sm text-center py-6"
+              className="bg-white text-[#0D1525] rounded-xl border border-gray-200 shadow-sm text-center py-6 hover:shadow-md transition-shadow"
             >
               <div className="px-6">
-                <Icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <Icon className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-lg">{title}</h3>
               </div>
               <div className="px-6 mt-2">
-                <p className="text-sm text-slate-600">{desc}</p>
+                <p className="text-sm text-[#334155]">{desc}</p>
               </div>
             </article>
           ))}
@@ -59,12 +59,12 @@ export default function AppointmentExpectations() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-lg text-slate-600 mb-6">
+          <p className="text-lg text-[#334155] mb-6">
             Most people feel relief immediately after the procedure.
           </p>
           <button
             type="button"
-            className="inline-flex items-center gap-2 h-12 px-8 text-lg rounded-md font-medium text-white bg-blue-600 hover:bg-blue-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+            className="inline-flex items-center gap-2 h-12 px-8 text-lg rounded-md font-medium text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <FiCalendar className="w-5 h-5" />
             Schedule Your Appointment Today
