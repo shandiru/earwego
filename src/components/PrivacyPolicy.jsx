@@ -110,10 +110,10 @@ const PrivacyPolicy = () => {
                         If you have any questions about this Privacy Policy or how we handle your personal data, please contact us:
                     </p>
                     <div className="text-white">
-                        <p><strong>STONELEY'S GARAGE SERVICES</strong></p>
-                        {/* <p>Email: <a href="mailto:smashedashby@gmail.com" className="text-[#27AE60] hover:underline">smashedashby@gmail.com</a></p> */}
-                        <p>Phone: +44 1623 623759</p>
-                        <p>Address: Stoneley&apos;s Garage, Hamilton Way, Mansfield NG18 5BU, UK</p>
+                        <p><strong>EAR WE GO</strong></p>
+                        <p>Email: <a href="mailto:earwegosales@gmail.com" className="text-[#27AE60] hover:underline">earwegosales@gmail.com</a></p>
+                        <p>Phone: 0808 137 1961</p>
+                        <p>Address: Great Northern Rd, Derby, DE1 1LR</p>
                     </div>
                     <p className="mt-2 text-white">
                         If you are not satisfied with our response, you have the right to lodge a complaint with the{' '}

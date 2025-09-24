@@ -28,7 +28,7 @@ const TermsConditions = () => {
                   <section>
                       <h2 className="text-2xl font-medium">3. Intellectual Property</h2>
                       <p className="text-white">
-                          All content on this website (including text, images, graphics, and logos) is owned by or licensed to STONELEY'S GARAGE SERVICES.
+                          All content on this website (including text, images, graphics, and logos) is owned by or licensed to EAR WE GO
                           You may view, download, and print content for personal use only.
                           You must not copy, reproduce, or distribute our website content without prior written consent.
                       </p>
@@ -77,10 +77,10 @@ const TermsConditions = () => {
                           If you have any questions about these Terms of Use, please contact us:
                       </p>
                       <div className="text-white">
-                          <p><strong>STONELEY'S GARAGE SERVICES</strong></p>
-                          {/* <p>Email: <a href="mailto:smashedashby@gmail.com" className="text-[#27AE60] hover:underline">smashedashby@gmail.com</a></p> */}
-                          <p>Phone: +44 1623 623759</p>
-                          <p>Address: Stoneley&apos;s Garage, Hamilton Way, Mansfield NG18 5BU, UK</p>
+                          <p><strong>EAR WE GO</strong></p>
+                          <p>Email: <a href="mailto:earwegosales@gmail.com" className="text-[#27AE60] hover:underline">earwegosales@gmail.com</a></p>
+                          <p>Phone: 0808 137 1961</p>
+                          <p>Address: Great Northern Rd, Derby, DE1 1LR</p>
                       </div>
                   </section>
               </div>
