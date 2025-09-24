@@ -125,11 +125,17 @@ export default function Footer() {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <address className="not-italic text-gray-300">
+                <a
+                  href="https://www.google.com/maps?q=Great+Northern+Rd,+Derby,+DE1+1LR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="not-italic text-gray-300"
+                >
                   <p>Great Northern Rd,</p>
                   <p>Derby, DE1 1LR</p>
-                </address>
+                </a>
               </div>
+
             </div>
           </div>
         </div>
@@ -137,7 +143,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center space-y-2">
           <p className="text-gray-400">
-            © 2024 Ear We Go. All rights reserved. Professional earwax removal
+            © 2025 Ear We Go. All rights reserved. Professional earwax removal
             services.
           </p>
           <p className="text-sm text-gray-400">
