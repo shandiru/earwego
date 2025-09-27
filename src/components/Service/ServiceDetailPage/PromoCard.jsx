@@ -1,12 +1,12 @@
-// src/components/services/PromoCard.jsx
 import React from "react";
+import { HashLink } from "react-router-hash-link"; // Import HashLink
 
-export default function PromoCard({ image, title, tag, cta, onClick }) {
+export default function PromoCard({ image, title, tag, cta, onsetClick }) {
   return (
     <div className="relative overflow-hidden rounded-2xl bg-slate-100">
       {/* background image */}
       <img
-        src="/dental.png" // kept exactly as you requested
+        src="/dental.png" // dynamic image as per your props
         alt={title}
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -24,12 +24,13 @@ export default function PromoCard({ image, title, tag, cta, onClick }) {
         </h4>
 
         <div className="mt-4 flex justify-center">
-          <button
-            onClick={onClick}
+          <HashLink
+          smooth
+            to="/#contact" // Navigate to the contact section of the homepage
             className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow transition-colors"
           >
             {cta}
-          </button>
+          </HashLink>
         </div>
       </div>
     </div>

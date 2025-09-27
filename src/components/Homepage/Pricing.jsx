@@ -74,7 +74,7 @@ export default function Pricing() {
 
             <div className="px-6 mt-auto">
               <a
-                href="tel:+447989668752"
+                href="tel:+448081371961"
                 className="inline-flex items-center justify-center w-full bg-[#43AA8B] hover:bg-[#318F6F] text-white rounded-md px-4 py-3 text-sm font-medium transition-all"
               >
                 <svg
@@ -142,7 +142,7 @@ export default function Pricing() {
 
             <div className="px-6 mt-auto">
               <a
-                href="tel:+447989668752"
+                href="tel:+448081371961"
                 className="inline-flex items-center justify-center w-full bg-[#43AA8B] hover:bg-[#318F6F] text-white rounded-md px-4 py-3 text-sm font-medium transition-all"
               >
                 <svg

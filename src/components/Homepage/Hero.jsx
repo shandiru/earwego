@@ -41,7 +41,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="tel:+447989668752"
+                href="tel:+448081371961"
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all shadow-xs h-10 rounded-md px-6 bg-[#43AA8B] hover:bg-[#368A75] text-white"
                 data-aos="zoom-in"
                 data-aos-delay="200"

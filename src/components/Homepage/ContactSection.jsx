@@ -128,26 +128,26 @@ const ContactSection = () => {
             <div className="px-6 pb-6 space-y-4">
               {/* Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="First Name">
+                <Field label="First Name*">
                   <Input placeholder="John" />
                 </Field>
-                <Field label="Last Name">
+                <Field label="Last Name*">
                   <Input placeholder="Smith" />
                 </Field>
               </div>
 
               {/* Phone */}
-              <Field label="Phone Number">
+              <Field label="Phone Number*">
                 <Input placeholder="07123 456789" inputMode="tel" />
               </Field>
 
               {/* Email */}
-              <Field label="Email Address">
+              <Field label="Email Address*">
                 <Input placeholder="john.smith@email.com" type="email" />
               </Field>
 
               {/* Service */}
-              <Field label="Preferred Service">
+              <Field label="Preferred Service*">
                 <select className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]">
                   <option>Single Ear Treatment (£50)</option>
                   <option>Both Ears Treatment (£60)</option>
@@ -155,12 +155,12 @@ const ContactSection = () => {
               </Field>
 
               {/* Address */}
-              <Field label="Your Address">
+              <Field label="Your Address*">
                 <Input placeholder="Full address for home visit" />
               </Field>
 
               {/* Additional Info */}
-              <Field label="Additional Information">
+              <Field label="Additional Information*">
                 <textarea
                   rows="4"
                   placeholder="Any symptoms, preferred appointment time, or special requirements..."

@@ -1,6 +1,7 @@
 // src/components/AppointmentExpectations.jsx
 import React from "react";
 import { FiUsers, FiInfo, FiClock, FiCheckCircle, FiCalendar } from "react-icons/fi";
+import { HashLink } from "react-router-hash-link";
 
 const steps = [
   {
@@ -26,6 +27,18 @@ const steps = [
 ];
 
 export default function AppointmentExpectations() {
+  // Fast scroll function for cross-page navigation (same as in Navbar)
+  const fastScroll = (el) => {
+    if (el) {
+      // Use requestAnimationFrame for immediate execution after DOM update
+      requestAnimationFrame(() => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -100; // Offset for sticky navbar
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+      });
+    }
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
@@ -62,13 +75,14 @@ export default function AppointmentExpectations() {
           <p className="text-lg text-[#334155] mb-6">
             Most people feel relief immediately after the procedure.
           </p>
-          <button
-            type="button"
-            className="inline-flex items-center gap-2 h-12 px-8 text-lg rounded-md font-medium text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+          <HashLink 
+            to="/#contact"
+            scroll={fastScroll}
+            className="inline-flex items-center gap-2 h-12 px-8 text-lg rounded-md font-medium text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors"
           >
             <FiCalendar className="w-5 h-5" />
             Schedule Your Appointment Today
-          </button>
+          </HashLink>
         </div>
       </div>
     </section>

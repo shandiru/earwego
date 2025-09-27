@@ -1,6 +1,7 @@
 // src/components/HeroMicroSuction.jsx
 import React from "react";
 import { FiCalendar, FiPhone } from "react-icons/fi";
+import { HashLink } from "react-router-hash-link";
 
 export default function HeroMicroSuction() {
   return (
@@ -27,22 +28,31 @@ export default function HeroMicroSuction() {
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* Primary CTA */}
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-md h-12 px-7 text-lg font-medium text-white bg-[#10B981] hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            <HashLink
+              smooth
+              to="/#contact"
             >
-              <FiCalendar className="w-5 h-5" />
-              Book Your Appointment
-            </button>
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-md h-12 px-7 text-lg font-medium text-white bg-[#10B981] hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              >
+                <FiCalendar className="w-5 h-5" />
+                Book Your Appointment
+              </button>
+
+            </HashLink>
 
             {/* Secondary CTA */}
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-md h-12 px-7 text-lg font-medium border border-gray-300 text-[#0D1525] bg-white hover:bg-emerald-50 hover:border-emerald-300 hover:text-[#10B981] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
-            >
-              <FiPhone className="w-5 h-5" />
-              Call Us Today
-            </button>
+            <a href="tel: +448081371961">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-md h-12 px-7 text-lg font-medium border border-gray-300 text-[#0D1525] bg-white hover:bg-emerald-50 hover:border-emerald-300 hover:text-[#10B981] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+              >
+                <FiPhone className="w-5 h-5" />
+                Call Us Today
+              </button>
+
+            </a>
           </div>
         </div>
       </div>

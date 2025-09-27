@@ -1,8 +1,8 @@
-// src/pages/ServiceDetail.jsx
 import React, { useState, useMemo } from "react";
 import ServiceSidebar from "../components/Service/ServiceDetailPage/ServiceSidebar";
 import PromoCard from "../components/Service/ServiceDetailPage/PromoCard";
 import ServiceContent from "../components/Service/ServiceDetailPage/ServiceContent";
+import { HashLink } from "react-router-hash-link"; // Import HashLink
 
 // Sidebar items (left column)
 const SERVICES = [
@@ -15,7 +15,6 @@ const SERVICES = [
 ];
 
 // Content for each service (right column)
-// Replace image paths with your real files in /public/images/...
 const SERVICE_CONTENT = {
   muffled: {
     title: "Muffled Hearing",
@@ -26,16 +25,16 @@ const SERVICE_CONTENT = {
     ],
     benefitsTitle: "The benefits :",
     benefits: [
-  "Noticeable improvement in hearing straight away",
-  "Safe and comfortable removal without water",
-  "Helps prevent further build-up and blockages",
-  "Quick procedure with minimal downtime",
-  "Protects delicate structures of the ear",
-  "Performed by experienced audiology professionals",
-]
+      "Noticeable improvement in hearing straight away",
+      "Safe and comfortable removal without water",
+      "Helps prevent further build-up and blockages",
+      "Quick procedure with minimal downtime",
+      "Protects delicate structures of the ear",
+      "Performed by experienced audiology professionals",
+    ]
 
   },
-tinnitus: {
+  tinnitus: {
     title: "Tinnitus",
     image: "/dental.png",
     intro: [
@@ -43,14 +42,14 @@ tinnitus: {
       "Gentle micro suction can relieve pressure and may help reduce tinnitus symptoms.",
     ],
     benefitsTitle: "The benefits :",
-   benefits: [
-  "May reduce ringing or buzzing sounds",
-  "Relieves pressure in the ear canal",
-  "Safe, gentle and non-invasive method",
-  "Immediate results in many cases",
-  "No messy drops or syringing required",
-  "Carried out by trained specialists",
-],
+    benefits: [
+      "May reduce ringing or buzzing sounds",
+      "Relieves pressure in the ear canal",
+      "Safe, gentle and non-invasive method",
+      "Immediate results in many cases",
+      "No messy drops or syringing required",
+      "Carried out by trained specialists",
+    ],
   },
   Earache: {
     title: "Earache",
@@ -60,15 +59,15 @@ tinnitus: {
       "Micro suction quickly removes the blockage, helping to ease discomfort.",
     ],
     benefitsTitle: "The benefits :",
-   benefits: [
-  "Rapid relief from pressure-related pain",
-  "Reduces risk of ear infections developing",
-  "Comfortable and precise wax removal",
-  "No risk of water entering the ear",
-  "Promotes better ear canal health",
-  "Professional and hygienic treatment environment",
-]
-,
+    benefits: [
+      "Rapid relief from pressure-related pain",
+      "Reduces risk of ear infections developing",
+      "Comfortable and precise wax removal",
+      "No risk of water entering the ear",
+      "Promotes better ear canal health",
+      "Professional and hygienic treatment environment",
+    ]
+    ,
   },
   Dizziness: {
     title: "Dizziness",
@@ -78,15 +77,15 @@ tinnitus: {
       "Our team can remove the blockage to help restore balance and comfort.",
     ],
     benefitsTitle: "The benefits :",
-benefits: [
-  "Can improve balance and reduce unsteadiness",
-  "Restores normal ear canal function",
-  "Safe, gentle technique with no water used",
-  "Fast, targeted treatment",
-  "Helps prevent recurrent wax build-up",
-  "Performed by skilled audiology practitioners",
-]
-,
+    benefits: [
+      "Can improve balance and reduce unsteadiness",
+      "Restores normal ear canal function",
+      "Safe, gentle technique with no water used",
+      "Fast, targeted treatment",
+      "Helps prevent recurrent wax build-up",
+      "Performed by skilled audiology practitioners",
+    ]
+    ,
   },
   Itchiness: {
     title: "Itchiness",
@@ -96,15 +95,15 @@ benefits: [
       "Micro suction removes the irritant and leaves your ears feeling fresh and clear.",
     ],
     benefitsTitle: "The benefits :",
-   benefits: [
-  "Immediate relief from irritation and itching",
-  "Clears out dry or flaky wax build-up",
-  "Helps maintain healthy ear canal skin",
-  "No need for pre-softening ear drops",
-  "Non-invasive and pain-free",
-  "Safe for sensitive ears",
-]
-,
+    benefits: [
+      "Immediate relief from irritation and itching",
+      "Clears out dry or flaky wax build-up",
+      "Helps maintain healthy ear canal skin",
+      "No need for pre-softening ear drops",
+      "Non-invasive and pain-free",
+      "Safe for sensitive ears",
+    ]
+    ,
   },
   DeviceIssues: {
     title: "Device Issues",
@@ -115,20 +114,19 @@ benefits: [
     ],
     benefitsTitle: "The benefits :",
     benefits: [
-  "Improves sound quality from hearing aids or earphones",
-  "Prevents feedback or whistling noises",
-  "Helps hearing tests produce accurate results",
-  "Reduces the risk of ear infections from trapped moisture",
-  "Simple and quick procedure",
-  "Professional care tailored to your needs",
-]
-,
+      "Improves sound quality from hearing aids or earphones",
+      "Prevents feedback or whistling noises",
+      "Helps hearing tests produce accurate results",
+      "Reduces the risk of ear infections from trapped moisture",
+      "Simple and quick procedure",
+      "Professional care tailored to your needs",
+    ]
+    ,
   },
 };
 
 export default function ServiceDetail() {
-  // Default to "Dental Implant" to mirror the screenshot
-  const [activeId, setActiveId] = useState("implant");
+  const [activeId, setActiveId] = useState("muffled");
 
   const active = useMemo(() => {
     // Fallback to the first item if an unknown id is passed
@@ -148,9 +146,11 @@ export default function ServiceDetail() {
 
           <PromoCard
             tag="Online Appointment"
-            title="Enhance Your Hearing with Professional Ear Cleaning"
+            title="Enhance Your Hearing with Professional Ear Cleaning"
             cta="Make Appointment"
             image="/images/promo-whitening.jpg"
+            // The `onClick` function is replaced with HashLink
+            onsetClick={() => {}}
           />
         </div>
 
