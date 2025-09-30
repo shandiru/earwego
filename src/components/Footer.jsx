@@ -1,8 +1,17 @@
 // src/components/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
+
+  const scrollWithOffset = (el) => {
+    const yOffset = -80; // adjust if header height changes
+    const y =
+      el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#0D1525] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,20 +53,26 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link
+                <HashLink
+
+                  scroll={scrollWithOffset}
+                  smooth
                   to="/terms-conditions"
                   className="text-gray-300 hover:text-[#10B981] transition-colors"
                 >
                   Terms & Conditions
-                </Link>
+                </HashLink>
               </li>
               <li>
-                <Link
+                <HashLink
+
+                  scroll={scrollWithOffset}
+                  smooth
                   to="/privacy-policy"
                   className="text-gray-300 hover:text-[#10B981] transition-colors"
                 >
                   Privacy Policy
-                </Link>
+                </HashLink>
               </li>
             </ul>
           </div>

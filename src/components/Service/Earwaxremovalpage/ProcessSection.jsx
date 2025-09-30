@@ -24,10 +24,7 @@ const steps = [
   },
 ];
 
-export default function ProcessSection({
-  imageSrc = "/images/micro-suction-process.jpg", // <-- put your own image path here
-  imageAlt = "Micro suction ear wax removal procedure",
-}) {
+export default function ProcessSection() {
   return (
     <section id="process" className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
@@ -61,14 +58,16 @@ export default function ProcessSection({
             ))}
           </div>
 
-          {/* Image (right) */}
-          <div>
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className="w-full rounded-xl shadow-lg object-cover"
-              loading="lazy"
-            />
+          {/* YouTube Video (right) */}
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.youtube.com/embed/kZvN37uWr48?rel=0"
+              title="Micro suction ear wax removal procedure"
+              className="w-full h-110 rounded-xl shadow-lg"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>

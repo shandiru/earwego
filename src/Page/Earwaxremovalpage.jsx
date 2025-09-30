@@ -12,13 +12,13 @@ import AppointmentExpectations from "../components/Service/Earwaxremovalpage/App
 function Earwax() {
   return (
     <>
-<HeroMicroSuction />
-<MicroSuctionInfo />
-<WaxBuildUpReasons />
-<ProcessSection />
-<SafetySection />
-<AppointmentExpectations />
-    
+      <HeroMicroSuction />
+      <MicroSuctionInfo />
+      <WaxBuildUpReasons />
+      <ProcessSection />
+      <SafetySection />
+      <AppointmentExpectations />
+
     </>
   );
 }
