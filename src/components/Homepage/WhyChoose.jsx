@@ -32,14 +32,14 @@ We pride ourselves on combining traditional care with modern best practices, ens
     full: `Your safety and comfort are our top priority. That’s why we only use medical grade, industry-approved equipment for every earwax removal procedure. This ensures treatments are not only highly effective but also safe, hygienic, and comfortable from start to finish.
 
 By investing in the latest approved tools, we’re able to deliver precise results while giving you peace of mind that you’re in trusted hands.`,
-    img: "/dental.png",
+    img: "/h1.jpg",
     icon: <FiActivity className="w-6 h-6 text-white" />,
   },
   {
     title: "Same Day Appointments",
     short: "No waiting weeks — we offer same-day relief when you need it most.",
     full: `No need to wait weeks to be seen — we offer same day appointments, so you can get relief quickly and safely. Using our medical grade approved equipment, we provide fast, effective treatments without long delays, helping you get back to clear and comfortable hearing as soon as possible.`,
-    img: "/dental.png",
+    img: "/h2.jpg",
     icon: <FiClock className="w-6 h-6 text-white" />,
   },
   {
@@ -48,7 +48,7 @@ By investing in the latest approved tools, we’re able to deliver precise resul
     full: `Our customers don’t just visit once — they trust us time and time again. Thanks to our professional care, comfortable treatments, and lasting results, we’re proud to have a very high percentage of returning happy customers.
 
 For us, it’s more than a service — it’s about building long-term relationships and becoming the go-to choice for safe and effective earwax removal.`,
-    img: "/dental.png",
+    img: "/h3.jpg",
     icon: <FiUsers className="w-6 h-6 text-white" />,
   },
   {
@@ -56,7 +56,7 @@ For us, it’s more than a service — it’s about building long-term relations
     short:
       "Professional, friendly service at your home or workplace — stress-free care.",
     full: `We make earwax removal simple and stress-free by bringing our professional, friendly service directly to you. Whether it’s in the comfort of your own home or at your workplace, we ensure safe, effective treatment that fits around your schedule.`,
-    img: "/dental.png",
+    img: "/h4.jpg",
     icon: <FiHome className="w-6 h-6 text-white" />,
   },
   {
@@ -65,7 +65,7 @@ For us, it’s more than a service — it’s about building long-term relations
     full: `We believe in providing more than just a one-off treatment — our Complete Care Package is designed to give you everything you need for lasting peace of mind. From your initial consultation to safe, effective earwax removal and clear aftercare guidance, we cover every step of the process.
 
 With expert service, medical grade equipment, and flexible appointment options, you can be confident you’re receiving the very best care, all in one package.`,
-    img: "/dental.png",
+    img: "/h5.jpg",
     icon: <FiCheckCircle className="w-6 h-6 text-white" />,
   },
 ];
