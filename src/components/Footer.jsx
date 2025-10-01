@@ -141,14 +141,13 @@ export default function Footer() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <a
-                  href="https://maps.app.goo.gl/z1h7ZfU5EnS8K8JP8"
+                  href="https://maps.app.goo.gl/9UQ4DpVbSdYuN5Fz7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="not-italic text-gray-300 hover:text-[#10B981]"
                 >
-                  <p>20 Osmaston Road,</p>
-                  <p>Derby, Derbyshire,</p>
-                  DE1 2HR
+                  <p>Great Northern Rd,</p>
+                  <p>Derby, DE1 1LR</p>
                 </a>
               </div>
 

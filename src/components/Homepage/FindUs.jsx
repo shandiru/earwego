@@ -32,7 +32,7 @@ export default function FindUs() {
         >
           <iframe
             title="Google Map - Ear We Go"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.6471687119856!2d-1.4751324!3d52.9187789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879f1178987258b%3A0x9170fc80c9adae0b!2sGeorgy&#39;s%20Court%20Flats%2C%2020%20Osmaston%20Rd%2C%20Derby%20DE1%202HR%2C%20UK!5e0!3m2!1sen!2slk!4v1759238669329!5m2!1sen!2slk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.5093705817058!2d-1.491566!3d52.921259299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879f13060e4201f%3A0x1d06502f6f1e422c!2sGreat%20Northern%20Rd%2C%20Derby%2C%20UK!5e0!3m2!1sen!2slk!4v1759292526907!5m2!1sen!2slk"
             width="100%"
             height="100%"
             allowFullScreen
@@ -45,7 +45,7 @@ export default function FindUs() {
         {/* Get Directions button */}
         <div className="mt-6" data-aos="fade-up" data-aos-delay="400">
           <a
-             href="https://maps.app.goo.gl/z1h7ZfU5EnS8K8JP8"
+            href="https://maps.app.goo.gl/9UQ4DpVbSdYuN5Fz7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#10B981] hover:bg-[#0D1525] text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg"
