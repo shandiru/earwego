@@ -8,6 +8,7 @@ import Earwaxremovalpage from "./Page/Earwaxremovalpage"; // corrected path
 import ServiceDetailpage from "./Page/ServiceDetailpage"; // corrected path
 import TermsConditions from "./components/Term.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
+import GDPRConsent from "./components/GDPRBanner.jsx";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
-
       <Footer />
+      <GDPRConsent />
     </Router>
   );
 }
