@@ -10,20 +10,66 @@ const ContactSection = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
 
+  // Validation state
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, mirror: true });
   }, []);
 
+  const phoneRegex = /^(?:\+44|0)[1-9]\d{8,9}$/;
+
+  const validate = (formData) => {
+    const newErrors = {};
+    if (!formData.first_name) newErrors.first_name = "First name is required";
+    if (!formData.last_name) newErrors.last_name = "Last name is required";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    else if (!phoneRegex.test(formData.phone))
+      newErrors.phone = "Invalid UK phone number format";
+
+    if (!formData.email) newErrors.email = "Email is required";
+    else if (!/^[\w.-]+@[\w.-]+\.\w+$/.test(formData.email))
+      newErrors.email = "Invalid email address";
+
+    if (!formData.service) newErrors.service = "Please select a service";
+    if (!formData.address) newErrors.address = "Address is required";
+    if (!formData.message) newErrors.message = "Please enter additional info";
+
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Clear error for this field on change
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
+    const formData = {
+      first_name: formRef.current.first_name.value.trim(),
+      last_name: formRef.current.last_name.value.trim(),
+      phone: formRef.current.phone.value.trim(),
+      email: formRef.current.email.value.trim(),
+      service: formRef.current.service.value,
+      address: formRef.current.address.value.trim(),
+      message: formRef.current.message.value.trim(),
+    };
+
+    const validationErrors = validate(formData);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) return; // Stop if errors
+
     setLoading(true);
 
     emailjs
       .sendForm(
-        "service_404lxe7", // Replace with your EmailJS Service ID
-        "template_yr5430s", // Replace with your EmailJS Template ID
+        "service_404lxe7",
+        "template_yr5430s",
         formRef.current,
-        "tmUgtXKf_TwGrV1iE" // Replace with your EmailJS Public Key
+        "tmUgtXKf_TwGrV1iE"
       )
       .then(
         (result) => {
@@ -31,6 +77,7 @@ const ContactSection = () => {
           setSuccess(true);
           setLoading(false);
           formRef.current.reset();
+          setErrors({});
         },
         (error) => {
           console.log(error.text);
@@ -61,7 +108,7 @@ const ContactSection = () => {
             </h3>
 
             <div className="space-y-6">
-              {/* Phone */}
+              {/* InfoCards */}
               <InfoCard
                 icon={
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3 4.11 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.07.96.29 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.41 1.85.63 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -77,8 +124,6 @@ const ContactSection = () => {
                 }
                 sub="Available 7 days a week"
               />
-
-              {/* Email */}
               <InfoCard
                 icon={
                   <>
@@ -97,8 +142,6 @@ const ContactSection = () => {
                 }
                 sub="We respond within 2 hours"
               />
-
-              {/* Address */}
               <InfoCard
                 icon={
                   <>
@@ -114,8 +157,6 @@ const ContactSection = () => {
                   </>
                 }
               />
-
-              {/* Service Areas */}
               <InfoCard
                 icon={
                   <>
@@ -155,46 +196,75 @@ const ContactSection = () => {
 
               {/* Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="First Name*" name="first_name">
-                  <Input placeholder="John" name="first_name" />
+                <Field label="First Name*" error={errors.first_name}>
+                  <Input
+                    placeholder="John"
+                    name="first_name"
+                    onChange={handleChange}
+                  />
                 </Field>
-                <Field label="Last Name*" name="last_name">
-                  <Input placeholder="Smith" name="last_name" />
+                <Field label="Last Name*" error={errors.last_name}>
+                  <Input
+                    placeholder="Smith"
+                    name="last_name"
+                    onChange={handleChange}
+                  />
                 </Field>
               </div>
 
               {/* Phone */}
-              <Field label="Phone Number*" name="phone">
-                <Input placeholder="07123 456789" inputMode="tel" name="phone" />
+              <Field label="Phone Number*" error={errors.phone}>
+                <Input
+                  placeholder="07123 456789"
+                  inputMode="tel"
+                  name="phone"
+                  onChange={handleChange}
+                />
               </Field>
 
               {/* Email */}
-              <Field label="Email Address*" name="email">
-                <Input placeholder="john.smith@email.com" type="email" name="email" />
+              <Field label="Email Address*" error={errors.email}>
+                <Input
+                  placeholder="john.smith@email.com"
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                />
               </Field>
 
               {/* Service */}
-              <Field label="Preferred Service*" name="service">
+              <Field label="Preferred Service*" error={errors.service}>
                 <select
                   name="service"
+                  onChange={handleChange}
                   className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
                 >
-                  <option>Single Ear Treatment (£50)</option>
-                  <option>Both Ears Treatment (£60)</option>
+                  <option value="">Select Service</option>
+                  <option value="Single Ear Treatment (£50)">
+                    Single Ear Treatment (£50)
+                  </option>
+                  <option value="Both Ears Treatment (£60)">
+                    Both Ears Treatment (£60)
+                  </option>
                 </select>
               </Field>
 
               {/* Address */}
-              <Field label="Your Address*" name="address">
-                <Input placeholder="Full address for home visit" name="address" />
+              <Field label="Your Address*" error={errors.address}>
+                <Input
+                  placeholder="Full address for home visit"
+                  name="address"
+                  onChange={handleChange}
+                />
               </Field>
 
               {/* Additional Info */}
-              <Field label="Additional Information*" name="message">
+              <Field label="Additional Information*" error={errors.message}>
                 <textarea
                   name="message"
                   rows="4"
                   placeholder="Any symptoms, preferred appointment time, or special requirements..."
+                  onChange={handleChange}
                   className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
                 />
               </Field>
@@ -208,10 +278,14 @@ const ContactSection = () => {
               </button>
 
               {success === true && (
-                <p className="text-sm text-green-500 text-center">Form sent successfully!</p>
+                <p className="text-sm text-green-500 text-center">
+                  Form sent successfully!
+                </p>
               )}
               {success === false && (
-                <p className="text-sm text-red-500 text-center">Something went wrong. Try again.</p>
+                <p className="text-sm text-red-500 text-center">
+                  Something went wrong. Try again.
+                </p>
               )}
 
               <p className="text-sm text-[#334155] text-center">
@@ -252,10 +326,11 @@ const InfoCard = ({ icon, title, main, sub }) => (
   </div>
 );
 
-const Field = ({ label, children }) => (
+const Field = ({ label, children, error }) => (
   <div>
-    <label className="text-sm font-medium text-[#0D1525] mb-2 block">{label}</label>
+    <label className="text-sm font-medium text-[#0D1525] mb-1 block">{label}</label>
     {children}
+    {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
   </div>
 );
 
