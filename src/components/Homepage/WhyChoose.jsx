@@ -87,7 +87,7 @@ export default function WhyChoose() {
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
-            Why Choose Ear We Go?
+            Why Choose EarWeGo?
           </h2>
           <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
             We've helped thousands of patients who couldn't get satisfactory

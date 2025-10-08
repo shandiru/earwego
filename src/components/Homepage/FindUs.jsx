@@ -31,7 +31,7 @@ export default function FindUs() {
           data-aos-delay="200"
         >
           <iframe
-            title="Google Map - Ear We Go"
+            title="Google Map - EarWeGo"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.5093705817058!2d-1.491566!3d52.921259299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879f13060e4201f%3A0x1d06502f6f1e422c!2sGreat%20Northern%20Rd%2C%20Derby%2C%20UK!5e0!3m2!1sen!2slk!4v1759292526907!5m2!1sen!2slk"
             width="100%"
             height="100%"

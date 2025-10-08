@@ -19,7 +19,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-2xl font-serif font-bold text-[#10B981] mb-4">
-              Ear We Go
+              EarWeGo
             </h3>
             <p className="text-gray-300 mb-4">
               Professional earwax removal service with over 10 years of
@@ -158,7 +158,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center space-y-2">
           <p className="text-gray-400">
-            © 2025 Ear We Go. All rights reserved. Professional earwax removal
+            © 2025 EarWeGo. All rights reserved. Professional earwax removal
             services.
           </p>
           <p className="text-sm text-gray-400">

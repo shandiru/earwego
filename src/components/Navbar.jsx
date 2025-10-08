@@ -54,9 +54,9 @@ const Navbar = () => {
           {/* ✅ Logo */}
           <div className="flex items-center">
             <img
-              src="/news-logo-removebg-preview.png"
-              alt="Ear We Go Logo"
-              className="h-24 sm:h-24 w-auto object-contain"
+              src="/LOGO2-removebg-preview.png"
+              alt="EarWeGo Logo"
+              className="h-18 sm:h-18 w-auto object-contain"
               loading="lazy"
               decoding="async"
             />
