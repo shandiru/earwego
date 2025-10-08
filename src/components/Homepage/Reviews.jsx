@@ -1,9 +1,9 @@
-// src/components/Reviews.jsx
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const ICONS_IMG = "icons.png"; // Floating icons background
 const PHONE = "0808 137 1961";
 
 const REVIEWS = [
@@ -72,7 +72,7 @@ function Star({ className = "w-6 h-6" }) {
 function QuoteIcon() {
   return (
     <svg
-      className="w-8 h-8 text-[#10B981] flex-shrink-0"
+      className="w-8 h-8 text-[#43AA8B] flex-shrink-0"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
@@ -112,7 +112,7 @@ function ReviewCard({ review, idx }) {
 
         <div className="mt-auto pt-4 border-t border-slate-100">
           <p className="font-semibold text-[#0D1525] text-base">{review.name}</p>
-          <p className="text-sm text-[#10B981] font-medium">{review.role}</p>
+          <p className="text-sm text-[#43AA8B] font-medium">{review.role}</p>
         </div>
       </div>
     </div>
@@ -124,23 +124,60 @@ export default function Reviews() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+    AOS.init({ duration: 1000, once: false, mirror: true });
   }, []);
 
   const scrollByWidth = (dir = 1) => {
     const el = scrollerRef.current;
     if (!el) return;
-    const amount = Math.min(el.clientWidth, 420); // one card-ish
+    const amount = Math.min(el.clientWidth, 420);
     el.scrollBy({ left: amount * dir, behavior: "smooth" });
   };
 
   return (
-    <section id="reviews" className="py-20 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="reviews"
+      className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+    >
+      {/* === Floating Background Icons === */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
+        />
+      </div>
+
+      {/* === Soft Gradient Glow === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
+
+      {/* === Content === */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
@@ -150,7 +187,11 @@ export default function Reviews() {
             Real reviews from real customers across the Midlands
           </p>
 
-          <div className="flex justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
+          <div
+            className="flex justify-center items-center"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <div className="flex">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} />
@@ -163,16 +204,21 @@ export default function Reviews() {
           </div>
         </div>
 
-        {/* Scroller with arrows */}
+        {/* Scroller */}
         <div className="relative" data-aos="fade-up" data-aos-delay="300">
-          {/* Left/Right arrows */}
+          {/* Left Arrow */}
           <button
             aria-label="Scroll left"
             onClick={() => scrollByWidth(-1)}
             className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M15 18l-6-6 6-6"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
 
@@ -185,19 +231,29 @@ export default function Reviews() {
             ))}
           </div>
 
+          {/* Right Arrow */}
           <button
             aria-label="Scroll right"
             onClick={() => scrollByWidth(1)}
             className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M9 18l6-6-6-6"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
 
-          {/* Mobile hint */}
+          {/* Mobile Hint */}
           {!showAll && (
-            <div className="flex justify-center mt-2 md:hidden" data-aos="fade-up" data-aos-delay="400">
+            <div
+              className="flex justify-center mt-2 md:hidden"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <p className="text-sm text-[#334155] bg-white px-4 py-2 rounded-full shadow-sm">
                 ← Scroll to see more reviews →
               </p>
@@ -205,8 +261,12 @@ export default function Reviews() {
           )}
         </div>
 
-        {/* See more / collapse */}
-        <div className="flex justify-center mt-6" data-aos="fade-up" data-aos-delay="500">
+        {/* Toggle Grid View */}
+        <div
+          className="flex justify-center mt-6"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <button
             onClick={() => setShowAll((v) => !v)}
             className="px-5 py-2 rounded-lg bg-white shadow hover:shadow-md text-[#334155] border border-slate-200"
@@ -215,7 +275,7 @@ export default function Reviews() {
           </button>
         </div>
 
-        {/* Expanded grid view */}
+        {/* Expanded Grid View */}
         {showAll && (
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {REVIEWS.map((r, idx) => (
@@ -236,24 +296,24 @@ export default function Reviews() {
                 <p className="text-[#334155] mb-4 leading-relaxed text-sm">{r.text}</p>
                 <div className="pt-4 border-t border-slate-100">
                   <p className="font-semibold text-[#0D1525] text-base">{r.name}</p>
-                  <p className="text-sm text-[#10B981] font-medium">{r.role}</p>
+                  <p className="text-sm text-[#43AA8B] font-medium">{r.role}</p>
                 </div>
               </div>
             ))}
           </div>
         )}
 
-        {/* CTA banner */}
+        {/* CTA Banner */}
         <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-          <div className="bg-gradient-to-r from-[#10B981] to-[#FFD700] rounded-xl p-8 max-w-4xl mx-auto text-white">
+          <div className="bg-gradient-to-r from-[#43AA8B] to-[#9C79B3] rounded-xl p-8 max-w-4xl mx-auto text-white shadow-lg">
             <h3 className="text-2xl font-serif font-bold mb-4">Join Our Happy Customers</h3>
-            <p className="text-lg text-yellow-100 mb-6">
+            <p className="text-lg text-white/80 mb-6">
               Experience professional ear wax removal with same-day appointments and home visits
               across the Midlands.
             </p>
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="inline-block bg-white text-[#0D1525] font-semibold px-8 py-3 rounded-lg hover:bg-yellow-50 transition-colors duration-200"
+              className="inline-block bg-white text-[#0D1525] font-semibold px-8 py-3 rounded-lg hover:bg-[#F8FAFC] transition-colors duration-200"
             >
               Call Now: {PHONE}
             </a>
@@ -261,10 +321,51 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* Utilities */}
-      <style>{`
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
+      {/* === Animations & Utilities === */}
+      <style jsx>{`
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(2deg);
+          }
+        }
+        @keyframes float-medium {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-3deg);
+          }
+        }
+        @keyframes float-fast {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-35px) rotate(5deg);
+          }
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-medium {
+          animation: float-medium 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+          animation: float-fast 4.5s ease-in-out infinite;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
         .line-clamp-6 {
           display: -webkit-box;
           -webkit-line-clamp: 6;

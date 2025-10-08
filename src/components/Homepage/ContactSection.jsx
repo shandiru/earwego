@@ -1,16 +1,15 @@
-// src/components/ContactSection.jsx
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import emailjs from "emailjs-com";
 
+const ICONS_IMG = "icons.png"; // Decorative background image
+
 const ContactSection = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
-
-  // Validation state
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -39,9 +38,7 @@ const ContactSection = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    // Clear error for this field on change
+    const { name } = e.target;
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
@@ -59,8 +56,7 @@ const ContactSection = () => {
 
     const validationErrors = validate(formData);
     setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length > 0) return; // Stop if errors
+    if (Object.keys(validationErrors).length > 0) return;
 
     setLoading(true);
 
@@ -72,15 +68,13 @@ const ContactSection = () => {
         "tmUgtXKf_TwGrV1iE"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           setSuccess(true);
           setLoading(false);
           formRef.current.reset();
           setErrors({});
         },
-        (error) => {
-          console.log(error.text);
+        () => {
           setSuccess(false);
           setLoading(false);
         }
@@ -88,8 +82,49 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+    >
+      {/* === Floating Background Icons === */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
+        />
+      </div>
+
+      {/* === Soft Gradient Glow === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
+
+      {/* === Content === */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
@@ -101,14 +136,13 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* LEFT: Contact Info */}
+          {/* === Left: Contact Info === */}
           <div data-aos="fade-right">
             <h3 className="text-2xl font-serif font-bold text-[#0D1525] mb-8">
               Contact Information
             </h3>
 
             <div className="space-y-6">
-              {/* InfoCards */}
               <InfoCard
                 icon={
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3 4.11 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.07.96.29 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.41 1.85.63 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -117,13 +151,14 @@ const ContactSection = () => {
                 main={
                   <a
                     href="tel:08081371961"
-                    className="text-lg text-[#10B981] font-semibold hover:underline"
+                    className="text-lg text-[#43AA8B] font-semibold hover:underline"
                   >
                     0808 137 1961
                   </a>
                 }
                 sub="Available 7 days a week"
               />
+
               <InfoCard
                 icon={
                   <>
@@ -135,13 +170,14 @@ const ContactSection = () => {
                 main={
                   <a
                     href="mailto:earwegosales@gmail.com"
-                    className="text-lg text-[#10B981] hover:underline"
+                    className="text-lg text-[#43AA8B] hover:underline"
                   >
                     earwegosales@gmail.com
                   </a>
                 }
                 sub="We respond within 2 hours"
               />
+
               <InfoCard
                 icon={
                   <>
@@ -157,6 +193,7 @@ const ContactSection = () => {
                   </>
                 }
               />
+
               <InfoCard
                 icon={
                   <>
@@ -179,7 +216,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* RIGHT: Appointment Form */}
+          {/* === Right: Contact Form === */}
           <div
             className="bg-white rounded-2xl shadow-sm border border-emerald-100"
             data-aos="fade-left"
@@ -190,95 +227,72 @@ const ContactSection = () => {
                   Book Your Appointment
                 </div>
                 <p className="text-[#334155]">
-                  We respond within 24 hours. Need it sooner? Call us
+                  We respond within 24 hours. Need it sooner? Call us.
                 </p>
               </div>
 
-              {/* Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="First Name*" error={errors.first_name}>
-                  <Input
-                    placeholder="John"
-                    name="first_name"
-                    onChange={handleChange}
-                  />
+                  <Input name="first_name" placeholder="John" onChange={handleChange} />
                 </Field>
                 <Field label="Last Name*" error={errors.last_name}>
-                  <Input
-                    placeholder="Smith"
-                    name="last_name"
-                    onChange={handleChange}
-                  />
+                  <Input name="last_name" placeholder="Smith" onChange={handleChange} />
                 </Field>
               </div>
 
-              {/* Phone */}
               <Field label="Phone Number*" error={errors.phone}>
-                <Input
-                  placeholder="07123 456789"
-                  inputMode="tel"
-                  name="phone"
-                  onChange={handleChange}
-                />
+                <Input name="phone" placeholder="07123 456789" onChange={handleChange} />
               </Field>
 
-              {/* Email */}
               <Field label="Email Address*" error={errors.email}>
                 <Input
-                  placeholder="john.smith@email.com"
-                  type="email"
                   name="email"
+                  type="email"
+                  placeholder="john.smith@email.com"
                   onChange={handleChange}
                 />
               </Field>
 
-              {/* Service */}
               <Field label="Preferred Service*" error={errors.service}>
                 <select
                   name="service"
                   onChange={handleChange}
-                  className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
+                  className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#43AA8B]"
                 >
                   <option value="">Select Service</option>
-                  <option value="Single Ear Treatment (£50)">
-                    Single Ear Treatment (£50)
-                  </option>
-                  <option value="Both Ears Treatment (£60)">
-                    Both Ears Treatment (£60)
-                  </option>
+                  <option value="Single Ear Treatment (£50)">Single Ear Treatment (£50)</option>
+                  <option value="Both Ears Treatment (£60)">Both Ears Treatment (£60)</option>
                 </select>
               </Field>
 
-              {/* Address */}
               <Field label="Your Address*" error={errors.address}>
                 <Input
-                  placeholder="Full address for home visit"
                   name="address"
+                  placeholder="Full address for home visit"
                   onChange={handleChange}
                 />
               </Field>
 
-              {/* Additional Info */}
               <Field label="Additional Information*" error={errors.message}>
                 <textarea
                   name="message"
                   rows="4"
                   placeholder="Any symptoms, preferred appointment time, or special requirements..."
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#43AA8B]"
                 />
               </Field>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-11 px-4 w-full bg-[#10B981] hover:bg-[#0D1525] text-white transition-colors disabled:opacity-50"
+                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-11 px-4 w-full bg-[#43AA8B] hover:bg-[#318F6F] text-white transition-colors disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Request Appointment"}
               </button>
 
               {success === true && (
-                <p className="text-sm text-green-500 text-center">
+                <p className="text-sm text-green-600 text-center">
                   Form sent successfully!
                 </p>
               )}
@@ -295,15 +309,55 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {/* === Animations === */}
+      <style jsx>{`
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(2deg);
+          }
+        }
+        @keyframes float-medium {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-3deg);
+          }
+        }
+        @keyframes float-fast {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-35px) rotate(5deg);
+          }
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-medium {
+          animation: float-medium 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+          animation: float-fast 4.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
 
-/* Helpers */
+/* === Helper Components === */
 const InfoCard = ({ icon, title, main, sub }) => (
   <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
     <div className="p-6 flex items-center">
-      <div className="bg-[#10B981] p-3 rounded-lg mr-4">
+      <div className="bg-[#43AA8B] p-3 rounded-lg mr-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6 text-white"
@@ -328,7 +382,9 @@ const InfoCard = ({ icon, title, main, sub }) => (
 
 const Field = ({ label, children, error }) => (
   <div>
-    <label className="text-sm font-medium text-[#0D1525] mb-1 block">{label}</label>
+    <label className="text-sm font-medium text-[#0D1525] mb-1 block">
+      {label}
+    </label>
     {children}
     {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
   </div>
@@ -337,7 +393,7 @@ const Field = ({ label, children, error }) => (
 const Input = (props) => (
   <input
     {...props}
-    className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
+    className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#43AA8B]"
   />
 );
 

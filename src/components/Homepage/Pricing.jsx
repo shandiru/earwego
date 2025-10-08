@@ -1,8 +1,9 @@
-// src/components/Pricing.jsx
 "use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const ICONS_IMG = "icons.png"; // Same floating icons image used in other sections
 
 export default function Pricing() {
   useEffect(() => {
@@ -14,9 +15,49 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="py-20 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="pricing"
+      className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+    >
+      {/* === Floating Background Icons === */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
+        />
+      </div>
 
+      {/* === Soft Gradient Glow === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
+
+      {/* === Content === */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-4">
@@ -29,7 +70,6 @@ export default function Pricing() {
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-
           {/* Single Ear */}
           <div
             data-slot="card"
@@ -167,10 +207,51 @@ export default function Pricing() {
             All prices include home visit – no additional travel charges
           </p>
           <p className="text-[#4B5563]">
-            Covering Derby, Nottingham, Leicestershire, Lincolnshire, and Staffordshire
+            Covering Derby, Nottingham, Leicestershire, Lincolnshire, and
+            Staffordshire
           </p>
         </div>
       </div>
+
+      {/* === Animations === */}
+      <style jsx>{`
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(2deg);
+          }
+        }
+        @keyframes float-medium {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-3deg);
+          }
+        }
+        @keyframes float-fast {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-35px) rotate(5deg);
+          }
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-medium {
+          animation: float-medium 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+          animation: float-fast 4.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

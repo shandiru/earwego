@@ -1,8 +1,9 @@
-// src/components/TeamSection.jsx
 "use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const ICONS_IMG = "icons.png"; // Floating icons background image
 
 const team = [
   {
@@ -29,8 +30,49 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className="bg-[#f8fafc]" id="team">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="team"
+      className="relative bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden py-20"
+    >
+      {/* === Floating Background Icons === */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
+        />
+      </div>
+
+      {/* === Soft Gradient Glow === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
+
+      {/* === Content === */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <header
           className="mx-auto mb-12 max-w-3xl text-center"
@@ -46,12 +88,12 @@ export default function TeamSection() {
           </p>
         </header>
 
-        {/* Cards */}
+        {/* Team Cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {team.map((m, idx) => (
             <article
               key={m.name}
-              className="flex flex-col justify-start rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-[0_0_25px_rgba(21,128,61,0.2)] sm:p-8 min-h-[420px]"
+              className="flex flex-col justify-start rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-[0_0_25px_rgba(67,170,139,0.25)] sm:p-8 min-h-[420px]"
               data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
               data-aos-delay={idx * 200}
             >
@@ -64,7 +106,7 @@ export default function TeamSection() {
                     className="h-full w-full rounded-full object-cover ring-4 ring-white"
                     loading="lazy"
                   />
-                  <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-[#15803d]/30" />
+                  <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-[#43AA8B]/30" />
                 </div>
               </div>
 
@@ -73,7 +115,7 @@ export default function TeamSection() {
                 <h3 className="text-2xl font-serif font-semibold text-[#0d1525]">
                   {m.name}
                 </h3>
-                <p className="mt-1 text-[#15803d] font-medium">{m.role}</p>
+                <p className="mt-1 text-[#43AA8B] font-medium">{m.role}</p>
               </div>
 
               {/* Bio */}
@@ -84,6 +126,46 @@ export default function TeamSection() {
           ))}
         </div>
       </div>
+
+      {/* === Animations === */}
+      <style jsx>{`
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(2deg);
+          }
+        }
+        @keyframes float-medium {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-3deg);
+          }
+        }
+        @keyframes float-fast {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-35px) rotate(5deg);
+          }
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-medium {
+          animation: float-medium 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+          animation: float-fast 4.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

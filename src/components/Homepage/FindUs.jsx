@@ -1,8 +1,9 @@
-// src/components/FindUs.jsx
 "use client";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const ICONS_IMG = "icons.png"; // Decorative background icons
 
 export default function FindUs() {
   useEffect(() => {
@@ -14,8 +15,49 @@ export default function FindUs() {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto text-center">
+    <section
+      id="find-us"
+      className="relative py-16 px-4 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+    >
+      {/* === Floating Background Icons === */}
+      <div className="absolute inset-0 pointer-events-none opacity-25">
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
+        />
+        <img
+          src={ICONS_IMG}
+          alt="Decorative Icons"
+          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
+        />
+      </div>
+
+      {/* === Soft Gradient Glow === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
+
+      {/* === Content === */}
+      <div className="relative z-10 max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h2
           className="text-3xl md:text-4xl font-serif font-bold text-[#0D1525] mb-10"
@@ -48,12 +90,52 @@ export default function FindUs() {
             href="https://maps.app.goo.gl/9UQ4DpVbSdYuN5Fz7"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#10B981] hover:bg-[#0D1525] text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg"
+            className="inline-block bg-[#43AA8B] hover:bg-[#318F6F] text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg"
           >
             Get Directions
           </a>
         </div>
       </div>
+
+      {/* === Animations === */}
+      <style jsx>{`
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(2deg);
+          }
+        }
+        @keyframes float-medium {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(-3deg);
+          }
+        }
+        @keyframes float-fast {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-35px) rotate(5deg);
+          }
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-medium {
+          animation: float-medium 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+          animation: float-fast 4.5s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }
