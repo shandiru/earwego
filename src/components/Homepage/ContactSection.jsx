@@ -1,17 +1,44 @@
 // src/components/ContactSection.jsx
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import emailjs from "emailjs-com";
 
 const ContactSection = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
+
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+    AOS.init({ duration: 1000, once: false, mirror: true });
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_404lxe7", // Replace with your EmailJS Service ID
+        "template_yr5430s", // Replace with your EmailJS Template ID
+        formRef.current,
+        "tmUgtXKf_TwGrV1iE" // Replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+          setLoading(false);
+          formRef.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+          setLoading(false);
+        }
+      );
+  };
 
   return (
     <section id="contact" className="py-20 bg-[#F8FAFC]">
@@ -116,78 +143,81 @@ const ContactSection = () => {
             className="bg-white rounded-2xl shadow-sm border border-emerald-100"
             data-aos="fade-left"
           >
-            <div className="px-6 pt-6 pb-4">
-              <div className="font-semibold text-2xl font-serif text-[#0D1525]">
-                Book Your Appointment
+            <form ref={formRef} onSubmit={sendEmail} className="px-6 pb-6 space-y-4">
+              <div className="px-6 pt-6 pb-4">
+                <div className="font-semibold text-2xl font-serif text-[#0D1525]">
+                  Book Your Appointment
+                </div>
+                <p className="text-[#334155]">
+                  We respond within 24 hours. Need it sooner? Call us
+                </p>
               </div>
-              <p className="text-[#334155]">
-                We respond within 24 hours. Need it sooner? Call us
-              </p>
-            </div>
 
-            <div className="px-6 pb-6 space-y-4">
               {/* Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="First Name*">
-                  <Input placeholder="John" />
+                <Field label="First Name*" name="first_name">
+                  <Input placeholder="John" name="first_name" />
                 </Field>
-                <Field label="Last Name*">
-                  <Input placeholder="Smith" />
+                <Field label="Last Name*" name="last_name">
+                  <Input placeholder="Smith" name="last_name" />
                 </Field>
               </div>
 
               {/* Phone */}
-              <Field label="Phone Number*">
-                <Input placeholder="07123 456789" inputMode="tel" />
+              <Field label="Phone Number*" name="phone">
+                <Input placeholder="07123 456789" inputMode="tel" name="phone" />
               </Field>
 
               {/* Email */}
-              <Field label="Email Address*">
-                <Input placeholder="john.smith@email.com" type="email" />
+              <Field label="Email Address*" name="email">
+                <Input placeholder="john.smith@email.com" type="email" name="email" />
               </Field>
 
               {/* Service */}
-              <Field label="Preferred Service*">
-                <select className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]">
+              <Field label="Preferred Service*" name="service">
+                <select
+                  name="service"
+                  className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
+                >
                   <option>Single Ear Treatment (£50)</option>
                   <option>Both Ears Treatment (£60)</option>
                 </select>
               </Field>
 
               {/* Address */}
-              <Field label="Your Address*">
-                <Input placeholder="Full address for home visit" />
+              <Field label="Your Address*" name="address">
+                <Input placeholder="Full address for home visit" name="address" />
               </Field>
 
               {/* Additional Info */}
-              <Field label="Additional Information*">
+              <Field label="Additional Information*" name="message">
                 <textarea
+                  name="message"
                   rows="4"
                   placeholder="Any symptoms, preferred appointment time, or special requirements..."
                   className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base text-[#334155] placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[#10B981]"
                 />
               </Field>
 
-              <button className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-11 px-4 w-full bg-[#10B981] hover:bg-[#0D1525] text-white transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3 4.11 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.07.96.29 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.41 1.85.63 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                Request Appointment
+              <button
+                type="submit"
+                disabled={loading}
+                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-11 px-4 w-full bg-[#10B981] hover:bg-[#0D1525] text-white transition-colors disabled:opacity-50"
+              >
+                {loading ? "Sending..." : "Request Appointment"}
               </button>
+
+              {success === true && (
+                <p className="text-sm text-green-500 text-center">Form sent successfully!</p>
+              )}
+              {success === false && (
+                <p className="text-sm text-red-500 text-center">Something went wrong. Try again.</p>
+              )}
 
               <p className="text-sm text-[#334155] text-center">
                 Same-day appointments often available • No obligation consultation
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -195,7 +225,7 @@ const ContactSection = () => {
   );
 };
 
-/* Small helpers */
+/* Helpers */
 const InfoCard = ({ icon, title, main, sub }) => (
   <div className="bg-white rounded-xl py-6 shadow-sm border border-emerald-100">
     <div className="p-6 flex items-center">
@@ -224,9 +254,7 @@ const InfoCard = ({ icon, title, main, sub }) => (
 
 const Field = ({ label, children }) => (
   <div>
-    <label className="text-sm font-medium text-[#0D1525] mb-2 block">
-      {label}
-    </label>
+    <label className="text-sm font-medium text-[#0D1525] mb-2 block">{label}</label>
     {children}
   </div>
 );
