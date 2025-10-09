@@ -1,9 +1,9 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ICONS_IMG = "icons.png"; // Floating icons background
+const ICONS_IMG = "icons.png";
 const PHONE = "0808 137 1961";
 
 const REVIEWS = [
@@ -51,18 +51,14 @@ const REVIEWS = [
   },
 ];
 
-function Star({ className = "w-6 h-6" }) {
+function Star({ className = "w-5 h-5" }) {
   return (
     <svg
       className={`${className} fill-[#FFD700] text-[#FFD700]`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      fill="none"
       stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
+      strokeWidth="1.5"
     >
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>
@@ -80,7 +76,6 @@ function QuoteIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden="true"
     >
       <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
       <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
@@ -91,12 +86,11 @@ function QuoteIcon() {
 function ReviewCard({ review, idx }) {
   return (
     <div
-      data-slot="card"
-      className="text-[#334155] flex flex-col gap-6 rounded-xl py-6 flex-none w-80 md:w-96 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 snap-start"
+      className="flex flex-col justify-between text-[#334155] rounded-xl py-6 flex-none w-80 md:w-96 bg-white shadow-md hover:shadow-lg transition-all duration-300 snap-start border border-slate-100"
       data-aos="fade-up"
       data-aos-delay={idx * 150}
     >
-      <div data-slot="card-content" className="p-6 h-full">
+      <div className="p-6 flex flex-col flex-grow">
         <div className="flex items-start justify-between mb-4">
           <QuoteIcon />
           <div className="flex ml-2">
@@ -106,13 +100,13 @@ function ReviewCard({ review, idx }) {
           </div>
         </div>
 
-        <p className="text-[#334155] mb-6 leading-relaxed text-sm line-clamp-6">
+        <p className="text-[#334155] mb-6 leading-relaxed text-sm line-clamp-6 flex-grow">
           {review.text}
         </p>
 
-        <div className="mt-auto pt-4 border-t border-slate-100">
-          <p className="font-semibold text-[#0D1525] text-base">{review.name}</p>
-          <p className="text-sm text-[#43AA8B] font-medium">{review.role}</p>
+        <div className="mt-auto pt-4 border-t border-slate-200">
+          <p className="font-semibold text-[#0D1525] text-base leading-tight">{review.name}</p>
+          <p className="text-sm text-[#43AA8B] font-medium leading-tight">{review.role}</p>
         </div>
       </div>
     </div>
@@ -121,7 +115,6 @@ function ReviewCard({ review, idx }) {
 
 export default function Reviews() {
   const scrollerRef = useRef(null);
-  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, mirror: true });
@@ -139,44 +132,17 @@ export default function Reviews() {
       id="reviews"
       className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
     >
-      {/* === Floating Background Icons === */}
+      {/* Floating Background Icons */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow"
-        />
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast"
-        />
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium"
-        />
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute bottom-[10%] left-[30%] w-16 sm:w-20 animate-float-slow"
-        />
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute top-[25%] right-[10%] w-20 sm:w-24 animate-float-medium"
-        />
-        <img
-          src={ICONS_IMG}
-          alt="Decorative Icons"
-          className="absolute bottom-[15%] right-[5%] w-20 sm:w-24 animate-float-fast"
-        />
+        <img src={ICONS_IMG} alt="Decor" className="absolute top-[8%] left-[10%] w-16 sm:w-20 animate-float-slow" />
+        <img src={ICONS_IMG} alt="Decor" className="absolute top-[35%] left-[35%] w-20 sm:w-24 animate-float-fast" />
+        <img src={ICONS_IMG} alt="Decor" className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium" />
       </div>
 
-      {/* === Soft Gradient Glow === */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
+      {/* Gradient Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
 
-      {/* === Content === */}
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -187,44 +153,31 @@ export default function Reviews() {
             Real reviews from real customers across the Midlands
           </p>
 
-          <div
-            className="flex justify-center items-center"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
+          <div className="flex justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
             <div className="flex">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} />
-              ))}
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} />)}
             </div>
-            <span className="ml-3 text-lg font-semibold text-[#0D1525]">
-              5.0 out of 5
-            </span>
+            <span className="ml-3 text-lg font-semibold text-[#0D1525]">5.0 out of 5</span>
             <span className="ml-2 text-[#334155]">• 7 reviews</span>
           </div>
         </div>
 
-        {/* Scroller */}
+        {/* Scroller - All reviews now show here */}
         <div className="relative" data-aos="fade-up" data-aos-delay="300">
           {/* Left Arrow */}
           <button
-            aria-label="Scroll left"
             onClick={() => scrollByWidth(-1)}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
+            className="hidden md:flex absolute left-[-30px] top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
+            aria-label="Scroll left"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path
-                d="M15 18l-6-6 6-6"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
           <div
             ref={scrollerRef}
-            className="flex overflow-x-auto gap-6 pb-6 scrollbar-hide snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-6 pb-6 px-2 scrollbar-hide snap-x snap-mandatory scroll-smooth"
           >
             {REVIEWS.map((r, idx) => (
               <ReviewCard key={idx} review={r} idx={idx} />
@@ -233,75 +186,15 @@ export default function Reviews() {
 
           {/* Right Arrow */}
           <button
-            aria-label="Scroll right"
             onClick={() => scrollByWidth(1)}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
+            className="hidden md:flex absolute right-[-30px] top-1/2 -translate-y-1/2 z-10 rounded-full bg-white shadow p-2 hover:shadow-md"
+            aria-label="Scroll right"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path
-                d="M9 18l6-6-6-6"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-
-          {/* Mobile Hint */}
-          {!showAll && (
-            <div
-              className="flex justify-center mt-2 md:hidden"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <p className="text-sm text-[#334155] bg-white px-4 py-2 rounded-full shadow-sm">
-                ← Scroll to see more reviews →
-              </p>
-            </div>
-          )}
         </div>
-
-        {/* Toggle Grid View */}
-        <div
-          className="flex justify-center mt-6"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <button
-            onClick={() => setShowAll((v) => !v)}
-            className="px-5 py-2 rounded-lg bg-white shadow hover:shadow-md text-[#334155] border border-slate-200"
-          >
-            {showAll ? "Hide extra reviews" : "See more reviews"}
-          </button>
-        </div>
-
-        {/* Expanded Grid View */}
-        {showAll && (
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {REVIEWS.map((r, idx) => (
-              <div
-                key={`grid-${idx}`}
-                className="bg-white rounded-xl shadow p-6"
-                data-aos="fade-up"
-                data-aos-delay={idx * 150}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <QuoteIcon />
-                  <div className="flex ml-2">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-[#334155] mb-4 leading-relaxed text-sm">{r.text}</p>
-                <div className="pt-4 border-t border-slate-100">
-                  <p className="font-semibold text-[#0D1525] text-base">{r.name}</p>
-                  <p className="text-sm text-[#43AA8B] font-medium">{r.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* CTA Banner */}
         <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
@@ -321,57 +214,26 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* === Animations & Utilities === */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes float-slow {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-10px) rotate(2deg);
-          }
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(2deg); }
         }
         @keyframes float-medium {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-25px) rotate(-3deg);
-          }
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-25px) rotate(-3deg); }
         }
         @keyframes float-fast {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-35px) rotate(5deg);
-          }
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-35px) rotate(5deg); }
         }
-        .animate-float-slow {
-          animation: float-slow 8s ease-in-out infinite;
-        }
-        .animate-float-medium {
-          animation: float-medium 6s ease-in-out infinite;
-        }
-        .animate-float-fast {
-          animation: float-fast 4.5s ease-in-out infinite;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .line-clamp-6 {
-          display: -webkit-box;
-          -webkit-line-clamp: 6;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
+        .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+        .animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
+        .animate-float-fast { animation: float-fast 4.5s ease-in-out infinite; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .line-clamp-6 { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
       `}</style>
     </section>
   );
