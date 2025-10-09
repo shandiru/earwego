@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "Home", to: "/#home" },
-                { label: "Why Choose Us", to: "/#services" },
+                { label: "Why Choose Us", to: "/#whyus" },
                 { label: "Pricing", to: "/#pricing" },
                 { label: "Reviews", to: "/#reviews" },
                 { label: "Contact", to: "/#contact" },

@@ -80,7 +80,7 @@ export default function WhyChoose() {
 
   return (
     <section
-      id="services"
+      id="whyus"
       className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
     >
       {/* === Floating Background Icons === */}

@@ -77,7 +77,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="#services"
+                href="#whyus"
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all border shadow-xs h-10 rounded-md px-6 border-[#9C79B3] text-[#9C79B3] hover:bg-[#9C79B3] hover:text-white"
               >
                 Learn More
