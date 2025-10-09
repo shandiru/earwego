@@ -27,14 +27,12 @@ const steps = [
 ];
 
 export default function AppointmentExpectations() {
-  // Fast scroll function for cross-page navigation (same as in Navbar)
   const fastScroll = (el) => {
     if (el) {
-      // Use requestAnimationFrame for immediate execution after DOM update
       requestAnimationFrame(() => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-        const yOffset = -100; // Offset for sticky navbar
-        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+        const yOffset = -100;
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
       });
     }
   };
@@ -70,18 +68,21 @@ export default function AppointmentExpectations() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* ✅ CTA (Mobile fixed only) */}
         <div className="text-center mt-12">
           <p className="text-lg text-[#334155] mb-6">
             Most people feel relief immediately after the procedure.
           </p>
-          <HashLink 
+
+          <HashLink
             to="/#contact"
             scroll={fastScroll}
-            className="inline-flex items-center gap-2 h-12 px-8 text-lg rounded-md font-medium text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors"
+            className="inline-flex items-center justify-center gap-2 h-12 px-8 text-[15px] sm:text-lg rounded-md font-medium text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors whitespace-nowrap"
           >
-            <FiCalendar className="w-5 h-5" />
-            Schedule Your Appointment Today
+            <FiCalendar className="w-5 h-5 flex-shrink-0" />
+            <span className="truncate sm:whitespace-normal">
+              Schedule Your Appointment Today
+            </span>
           </HashLink>
         </div>
       </div>
