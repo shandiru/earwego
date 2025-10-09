@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
-
   const scrollWithOffset = (el) => {
     const yOffset = -80; // adjust if header height changes
-    const y =
-      el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
@@ -37,42 +35,40 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { label: "Home", href: "#home" },
-                { label: "Why Choose Us", href: "#services" },
-                { label: "Pricing", href: "#pricing" },
-                { label: "Reviews", href: "#reviews" },
-                { label: "Contact", href: "#contact" },
+                { label: "Home", to: "/#home" },
+                { label: "Why Choose Us", to: "/#services" },
+                { label: "Pricing", to: "/#pricing" },
+                { label: "Reviews", to: "/#reviews" },
+                { label: "Contact", to: "/#contact" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <HashLink
+                    smooth
+                    scroll={scrollWithOffset}
+                    to={link.to}
                     className="text-gray-300 hover:text-[#10B981] transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
-              <li>
-                <HashLink
 
-                  scroll={scrollWithOffset}
-                  smooth
+              <li>
+                <Link
                   to="/terms-conditions"
                   className="text-gray-300 hover:text-[#10B981] transition-colors"
                 >
                   Terms & Conditions
-                </HashLink>
+                </Link>
               </li>
-              <li>
-                <HashLink
 
-                  scroll={scrollWithOffset}
-                  smooth
+              <li>
+                <Link
                   to="/privacy-policy"
                   className="text-gray-300 hover:text-[#10B981] transition-colors"
                 >
                   Privacy Policy
-                </HashLink>
+                </Link>
               </li>
             </ul>
           </div>
@@ -150,7 +146,6 @@ export default function Footer() {
                   <p>Derby, DE1 1LR</p>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
