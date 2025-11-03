@@ -18,7 +18,7 @@ export default function PromoCard({ image, title, tag, cta, onsetClick }) {
         alt={title}
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* gradient mask for readability */}
+      {/* linear mask for readability */}
       <div className="absolute inset-0 bg-[#0D1525]/40" /> {/* Deep Navy overlay */}
 
       <div className="relative p-6">

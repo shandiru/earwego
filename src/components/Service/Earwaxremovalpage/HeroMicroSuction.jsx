@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 
 export default function HeroMicroSuction() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}

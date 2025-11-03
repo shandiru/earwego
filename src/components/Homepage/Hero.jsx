@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] py-16 sm:py-20 overflow-hidden"
+      className="relative bg-linear-to-br from-[#F8FAFC] via-white to-[#EAF7F3] py-16 sm:py-20 overflow-hidden"
     >
       {/* === Floating icons background === */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -140,7 +140,7 @@ export default function Hero() {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/30 to-[#43AA8B]/30 rounded-full blur-[120px] animate-pulse-slow"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-[#9C79B3]/30 to-[#43AA8B]/30 rounded-full blur-[120px] animate-pulse-slow"></div>
 
             <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-10 max-w-md w-full flex items-center justify-center group">
               <img

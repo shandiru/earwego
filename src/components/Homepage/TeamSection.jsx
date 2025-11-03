@@ -32,7 +32,7 @@ export default function TeamSection() {
   return (
     <section
       id="team"
-      className="relative bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden py-20"
+      className="relative bg-linear-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden py-20"
     >
       {/* === Floating Background Icons === */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -68,8 +68,8 @@ export default function TeamSection() {
         />
       </div>
 
-      {/* === Soft Gradient Glow === */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
+      {/* === Soft linear Glow === */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]"></div>
 
       {/* === Content === */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

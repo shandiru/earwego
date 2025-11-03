@@ -44,8 +44,8 @@ export default function ProcessSection() {
           <div className="space-y-8">
             {steps.map((s, i) => (
               <div key={s.title} className="flex items-start gap-4">
-                {/* Step number with rainbow gradient */}
-                <div className="bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-md">
+                {/* Step number with rainbow linear */}
+                <div className="bg-linear-to-r from-emerald-500 via-yellow-400 to-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-md">
                   {i + 1}
                 </div>
                 <div>

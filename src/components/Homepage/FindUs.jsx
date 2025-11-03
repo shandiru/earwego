@@ -17,7 +17,7 @@ export default function FindUs() {
   return (
     <section
       id="find-us"
-      className="relative py-16 px-4 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+      className="relative py-16 px-4 bg-linear-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
     >
       {/* === Floating Background Icons === */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -53,8 +53,8 @@ export default function FindUs() {
         />
       </div>
 
-      {/* === Soft Gradient Glow === */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
+      {/* === Soft linear Glow === */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
 
       {/* === Content === */}
       <div className="relative z-10 max-w-7xl mx-auto text-center">

@@ -130,7 +130,7 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="relative py-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
+      className="relative py-20 bg-linear-to-br from-[#F8FAFC] via-white to-[#EAF7F3] overflow-hidden"
     >
       {/* Floating Background Icons */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -139,8 +139,8 @@ export default function Reviews() {
         <img src={ICONS_IMG} alt="Decor" className="absolute bottom-[25%] right-[25%] w-16 sm:w-20 animate-float-medium" />
       </div>
 
-      {/* Gradient Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
+      {/* linear Glow */}
+      <div className="absolute inset-0 bg-linear-to-br from-[#9C79B3]/20 to-[#43AA8B]/20 blur-[160px]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,7 +198,7 @@ export default function Reviews() {
 
         {/* CTA Banner */}
         <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
-          <div className="bg-gradient-to-r from-[#43AA8B] to-[#9C79B3] rounded-xl p-8 max-w-4xl mx-auto text-white shadow-lg">
+          <div className="bg-linear-to-r from-[#43AA8B] to-[#9C79B3] rounded-xl p-8 max-w-4xl mx-auto text-white shadow-lg">
             <h3 className="text-2xl font-serif font-bold mb-4">Join Our Happy Customers</h3>
             <p className="text-lg text-white/80 mb-6">
               Experience professional ear wax removal with same-day appointments and home visits
