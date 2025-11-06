@@ -8,27 +8,27 @@ export default function FAQSection() {
     {
       question: "Is microsuction safe?",
       answer:
-        "Yes. Microsuction is considered the safest and most effective method of ear wax removal. It is a dry procedure performed under direct visual guidance, minimizing risks of infection or injury.",
+        "Yes. It is considered the safest and most effective method for ear wax removal, widely used by hearing professionals and clinics.",
     },
     {
       question: "How often should I have wax removed?",
       answer:
-        "This varies from person to person. Most patients benefit from a cleaning every 6 to 12 months, depending on earwax production and personal comfort.",
+        "It varies from person to person, but most people benefit from treatment once or twice a year.",
     },
     {
       question: "Can you remove wax from children's ears?",
       answer:
-        "Yes, we can safely perform microsuction for children, provided they are able to remain still and calm during the short procedure. Our clinicians ensure comfort throughout.",
+        "Yes, for children aged six and over, as long as they can stay comfortable and still during the procedure.",
     },
     {
       question: "Do you charge extra for home visits?",
       answer:
-        "No. All of our prices already include the cost of the home visit — there are no hidden fees or additional travel charges.",
+        "No, home visits within the Nottingham area are included in your price. Travel charges may apply outside the area.",
     },
     {
       question: "How long does the appointment take?",
       answer:
-        "A typical home visit takes around 30 minutes, including consultation and treatment, ensuring thorough care without feeling rushed.",
+        "Appointments typically last around 30 minutes, and most clients notice clearer hearing immediately after treatment.",
     },
   ];
 
