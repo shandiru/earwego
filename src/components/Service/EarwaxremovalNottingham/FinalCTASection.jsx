@@ -3,11 +3,11 @@ import React from "react";
 
 export default function FinalCTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#E9F3EE] via-[#F9FBFA] to-[#E6F2EC]">
+    <section className="py-20 bg-[linear-gradient(to_bottom_right,#F8FAFC,white,#EAF7F3)]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0E1C17] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0D1525] mb-6 font-serif">
             Ready to Hear Clearly Again
           </h2>
 
@@ -24,7 +24,7 @@ export default function FinalCTASection() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Call Us Now */}
-            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium bg-[#184937] text-white hover:bg-[#143B2C] h-10 px-6 transition-all w-full sm:w-auto text-sm">
+            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium bg-[#43AA8B] hover:bg-[#318F6F] text-white h-12 px-8 shadow-[0_0_20px_#43AA8B33] hover:shadow-[0_0_25px_#43AA8B55] transition-all w-full sm:w-auto text-base">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -43,14 +43,14 @@ export default function FinalCTASection() {
             </button>
 
             {/* Book Online */}
-            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium border border-[#D1D5DB] bg-white text-[#0E1C17] hover:bg-[#F4FAF8] h-10 px-6 transition-all w-full sm:w-auto text-sm">
+            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium border border-[#43AA8B]/30 bg-white text-[#0D1525] hover:bg-[#EAF7F3] hover:border-[#43AA8B]/60 h-12 px-8 transition-all duration-300 w-full sm:w-auto text-base">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
+                stroke="#43AA8B"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -65,14 +65,14 @@ export default function FinalCTASection() {
             </button>
 
             {/* Contact Us */}
-            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium border border-[#D1D5DB] bg-white text-[#0E1C17] hover:bg-[#F4FAF8] h-10 px-6 transition-all w-full sm:w-auto text-sm">
+            <button className="inline-flex items-center justify-center gap-2 rounded-md font-medium border border-[#43AA8B]/30 bg-white text-[#0D1525] hover:bg-[#EAF7F3] hover:border-[#43AA8B]/60 h-12 px-8 transition-all duration-300 w-full sm:w-auto text-base">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
+                stroke="#43AA8B"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

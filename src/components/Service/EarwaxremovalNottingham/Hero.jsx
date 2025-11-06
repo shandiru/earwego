@@ -3,7 +3,7 @@ import React from "react";
 
 export default function EarWaxHero() {
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center bg-[linear-gradient(to_br,#F8FAFC,white,#EAF7F3)]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -17,17 +17,17 @@ export default function EarWaxHero() {
       <div className="relative z-10 w-full">
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#0D1525]">
               Ear Wax Removal in Nottingham
             </h1>
 
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#334155] mb-8">
               Safe, professional ear care in the comfort of your own home
             </p>
 
-            <p className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-400 leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-[#4B5563] leading-relaxed mb-12 max-w-3xl mx-auto">
               Blocked ears can make life uncomfortable, from muffled hearing and ringing to that
-              frustrating feeling of fullness. At <strong>Earwego</strong>, our ear wax removal in
+              frustrating feeling of fullness. At <strong className="text-[#43AA8B]">EarWeGo</strong>, our ear wax removal in
               Nottingham service restores clear hearing quickly and safely without you having to
               visit a clinic. Our trained clinicians come directly to your home, bringing
               medical-grade microsuction equipment and a calm, friendly approach.
@@ -35,7 +35,7 @@ export default function EarWaxHero() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md h-12 px-8 transition-all">
+              <button className="inline-flex items-center justify-center gap-2 bg-[#43AA8B] hover:bg-[#318F6F] text-white font-medium rounded-md h-12 px-8 transition-all shadow-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -56,7 +56,7 @@ export default function EarWaxHero() {
                 Book Appointment
               </button>
 
-              <button className="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-900 font-medium rounded-md h-12 px-8 transition-all">
+              <button className="inline-flex items-center justify-center gap-2 bg-[#9C79B3] hover:bg-[#86629E] text-white font-medium rounded-md h-12 px-8 transition-all shadow-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -76,25 +76,19 @@ export default function EarWaxHero() {
             </div>
 
             {/* Stats */}
-            <div className="mt-16 pt-8 border-t border-gray-300 dark:border-gray-700">
+            <div className="mt-16 pt-8 border-t border-[#43AA8B]/30">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Safe &amp; Professional
-                  </div>
+                  <div className="text-3xl font-bold text-[#43AA8B] mb-2">100%</div>
+                  <div className="text-sm text-[#334155]">Safe &amp; Professional</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">Home</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Service Available
-                  </div>
+                  <div className="text-3xl font-bold text-[#43AA8B] mb-2">Home</div>
+                  <div className="text-sm text-[#334155]">Service Available</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">Expert</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Trained Clinicians
-                  </div>
+                  <div className="text-3xl font-bold text-[#43AA8B] mb-2">Expert</div>
+                  <div className="text-sm text-[#334155]">Trained Clinicians</div>
                 </div>
               </div>
             </div>
