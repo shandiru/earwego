@@ -1,11 +1,12 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [locationOpen, setLocationOpen] = useState(false);
   const location = useLocation();
 
   // Close mobile menu on resize above breakpoint
@@ -15,16 +16,7 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Smooth scroll with offset for sticky navbar
-  const scrollWithOffset = (el) => {
-    if (el) {
-      const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-      const yOffset = -100;
-      window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-    }
-  };
-
-  // Enhanced scroll for cross-page navigation
+  // Smooth scroll with offset
   const enhancedScroll = (el) => {
     if (el) {
       setTimeout(() => {
@@ -36,7 +28,6 @@ const Navbar = () => {
   };
 
   const links = [
-    { label: "Home", href: "/" },
     { label: "Why Us", href: "/#whyus" },
     { label: "Pricing", href: "/#pricing" },
     { label: "Team", href: "/#team" },
@@ -44,6 +35,7 @@ const Navbar = () => {
     { label: "FAQ", href: "/#faq" },
     { label: "Symptoms", href: "/symptoms" },
     { label: "Micro suction", href: "/Earwaxremovalpage" },
+    // Location dropdown handled separately
     { label: "Contact", href: "/#contact" },
   ];
 
@@ -51,8 +43,8 @@ const Navbar = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* ✅ Logo */}
-          <div className="flex items-center">
+          {/* ✅ Logo with Home link */}
+          <Link to="/" className="flex items-center">
             <img
               src="/LOGO2-removebg-preview.png"
               alt="EarWeGo Logo"
@@ -60,10 +52,10 @@ const Navbar = () => {
               loading="lazy"
               decoding="async"
             />
-          </div>
+          </Link>
 
-          {/* Desktop Navigation (≥1024px) */}
-          <nav className="hidden lg:flex space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex space-x-8 items-center">
             {links.map((link) => (
               <HashLink
                 key={link.label}
@@ -74,9 +66,35 @@ const Navbar = () => {
                 {link.label}
               </HashLink>
             ))}
+
+            {/* ✅ Location dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setLocationOpen(!locationOpen)}
+                className="flex items-center gap-1 text-[#4B5563] hover:text-[#0D1525] font-medium text-base"
+              >
+                Location {locationOpen ? (
+                  <ChevronUp className="w-4 h-4" />
+                ) : (
+                  <ChevronDown className="w-4 h-4" />
+                )}
+              </button>
+
+              {locationOpen && (
+                <div className="absolute mt-2 bg-white border border-gray-200 shadow-lg rounded-md py-2 w-48">
+                  <Link
+                    to="/earwax-removal-nottingham"
+                    onClick={() => setLocationOpen(false)}
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#F8FAFC] hover:text-[#0D1525] transition-colors"
+                  >
+                    Nottingham
+                  </Link>
+                </div>
+              )}
+            </div>
           </nav>
 
-          {/* Call Button (Desktop) */}
+          {/* Desktop Call Button */}
           <a
             href="tel:+448081371961"
             className="hidden lg:inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold shadow h-10 px-5 bg-[#43AA8B] hover:bg-[#368a75] text-white transition-all"
@@ -85,7 +103,7 @@ const Navbar = () => {
             Call Now
           </a>
 
-          {/* Mobile / Tablet Hamburger */}
+          {/* Mobile Hamburger */}
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((o) => !o)}
@@ -110,6 +128,34 @@ const Navbar = () => {
                   {link.label}
                 </HashLink>
               ))}
+
+              {/* ✅ Mobile Location dropdown */}
+              <div className="px-3">
+                <button
+                  onClick={() => setLocationOpen(!locationOpen)}
+                  className="w-full flex items-center justify-between py-2 text-base font-medium text-[#4B5563] hover:text-[#0D1525] transition-colors"
+                >
+                  Location
+                  {locationOpen ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+
+                {locationOpen && (
+                  <Link
+                    to="/earwax-removal-nottingham"
+                    onClick={() => {
+                      setOpen(false);
+                      setLocationOpen(false);
+                    }}
+                    className="block ml-4 mt-1 px-3 py-2 text-[#4B5563] hover:bg-[#F8FAFC] hover:text-[#0D1525] rounded-md transition-colors"
+                  >
+                    Nottingham
+                  </Link>
+                )}
+              </div>
             </nav>
 
             <a
