@@ -9,7 +9,7 @@ import ServiceDetailpage from "./Page/ServiceDetailpage"; // corrected path
 import TermsConditions from "./components/Term.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 import GDPRConsent from "./components/GDPRBanner.jsx";
-
+import EarwaxremovalNottingham from "./Page/EarwaxremovalNottingham.jsx";
 function App() {
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
         <Route path="/symptoms" element={<ServiceDetailpage />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/earwax-removal-nottingham" element={<EarwaxremovalNottingham />} />
       </Routes>
       <Footer />
       <GDPRConsent />
